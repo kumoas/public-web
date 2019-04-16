@@ -1,49 +1,40 @@
-<div class="m-login__signin">
-    <div class="m-login__head m-top-login">
-        <h3 class="m-title m-login-title">
-            <span> Sign in to your workspace</span>
-        </h3>
-    </div>
-    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.form)" class="m-login__form m-form">
-        <ng-template #alertSignin></ng-template>
-        <div class="login-form">
-            <div class="form-group m-form__group">
-                <div class="input-group">
-                    <input class="form-input" type="text" placeholder="yoursitename" name="subdomain" [(ngModel)]="model.subdomain"
-                        id="subdomain" required>
-                    <span class="input-group-addon" style="height: 32px;"><b>.kumolus.com</b></span>
+<div class="m-container m-nav-top">
+    <div class="row">
+      <div class="col-md-6" style="min-height: 390px;">
+            <div class="m-portlet m-portlet--tab">
+                <div class="m-portlet__head">
+                    <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <span class="m-portlet__head-icon m--hide">
+                        <i class="la la-gear"></i>
+                        </span>
+                        <h3 class="m-portlet__head-text">
+                            <span> Sign in to your workspace</span>
+                        </h3>
+                    </div>
+                    </div>
+                </div>
+                <div class="m-portlet__body">
+                    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.form)" class="m-login__form m-form">
+                        <ng-template #alertSignin></ng-template>
+                        <div class="login-form">
+                            <div class="form-group m-form__group">
+                                <div class="input-group">
+                                    <input class="form-input" type="text" placeholder="yoursitename" name="subdomain" [(ngModel)]="model.subdomain"
+                                        id="subdomain" required>
+                                    <span class="input-group-addon" style="height: 32px;"><b>.kumolus.com</b></span>
+                                </div>
+                            </div>
+                            <div class="m-login__form-action">
+                                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading,'m-disabled':loading || !loginForm.form.valid}"
+                                    id="m_login_signin_submit" class="m-btn-form">
+                                    Continue
+                                </button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="m-login__form-action">
-                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading,'m-disabled':loading || !loginForm.form.valid}"
-                    id="m_login_signin_submit" class="m-btn-form">
-                    Continue
-                </button>
-            </div>
-        </div>
-    </form>
-
-    <div class="m-stack__item m-stack__item--center">
-        <div class="m-account">
-            <span class="m-login-msg m-title m-anchor" routerLink="/auth/forgetpassword">
-                Don’t know your workspace URL?
-            </span>
-        </div>
-    </div>
-
-    <div class="m-account-msg">
-        <div>
-            <span class="m-title m-footer-size m-anchor m-login-title" routerLink="/auth/signup">
-                Sign up for an account
-            </span>
-        </div>
-        <div>
-            <span class="m-title m-anchor" [routerLink]="['/privacy']">
-                Privacy policy .
-            </span>
-            <span class="m-title m-anchor" [routerLink]="['/terms']">
-                Terms of use
-            </span>
         </div>
     </div>
 </div>

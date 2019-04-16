@@ -2,12 +2,10 @@ import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
 import "rxjs/add/operator/map";
 
-import { NgxRolesService, NgxPermissionsService } from 'ngx-permissions';
-
 @Injectable()
 export class AuthenticationService {
 
-    constructor(private http: Http, private ngxRolesService: NgxRolesService, private ngxPermissionsService: NgxPermissionsService) {
+    constructor(private http: Http) {
     }
 
     validateSubdomain(subdoamin: String){

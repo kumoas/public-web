@@ -3,13 +3,10 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { AuthenticationService } from "../_services/authentication.service";
 import { AlertService } from "../_services/alert.service";
-import { UserService } from "../_services/user.service";
-import { AlertComponent } from "../_directives/alert.component";
-import { Helpers } from "../../core/helpers/helpers";
 import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
-    selector: "kumo-auth-login",
+    selector: "kumo-site-workspace",
     templateUrl: './workspace.component.html',
     encapsulation: ViewEncapsulation.None
 })
@@ -25,7 +22,7 @@ export class WorkspaceComponent implements OnInit {
         private _route: ActivatedRoute,
         private _authService: AuthenticationService,
         private _alertService: AlertService,
-        private _flashMessagesService: FlashMessagesService,
+        // private _flashMessagesService: FlashMessagesService,
         private cfr: ComponentFactoryResolver) {
     }
 
@@ -40,11 +37,11 @@ export class WorkspaceComponent implements OnInit {
             localStorage.setItem('allowed_url', response.url);
             window.location.href = response.url+"/auth/login";
            }else{
-            this._flashMessagesService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 5000 });
+            // this._flashMessagesService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 5000 });
            }
         }, function (error) {
             let errMsg = JSON.parse(error._body);
-            this._flashMessagesService.show(errMsg.message, { cssClass: 'alert-danger', timeout: 10000 });
+            // this._flashMessagesService.show(errMsg.message, { cssClass: 'alert-danger', timeout: 10000 });
             this._alertService.error(error.message);
             this.loading = false;
         });
