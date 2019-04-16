@@ -18,6 +18,7 @@ import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AboutComponent } from './about/about.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
+import { SignupComponent } from './signup/signup.component';
 
 import { AlertService } from "./_services/alert.service";
 import { AuthenticationService } from "./_services/authentication.service";
@@ -72,6 +73,9 @@ const routes: Routes = [
                 "path": "workspace",
                 "component": WorkspaceComponent,
             },
+            {   "path": "signup",
+                "component": SignupComponent,
+            },
             {
                 "path": "",
                 "redirectTo": "home",
@@ -93,7 +97,8 @@ const routes: Routes = [
         TermsComponent,
         PrivacyComponent,
         AboutComponent,
-        WorkspaceComponent
+        WorkspaceComponent,
+        SignupComponent
     ],
     imports: [
         CommonModule,

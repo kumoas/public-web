@@ -35,7 +35,7 @@ export class WorkspaceComponent implements OnInit {
         this._authService.validateSubdomain(subdomain).then(response => {
            if(response.status){
             localStorage.setItem('allowed_url', response.url);
-            window.location.href = response.url+"/auth/login";
+            window.location.href = response.url;
            }else{
             // this._flashMessagesService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 5000 });
            }

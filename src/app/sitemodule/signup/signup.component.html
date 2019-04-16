@@ -1,0 +1,109 @@
+<div class="m-container m-nav-top">
+	<div class="row">
+		<div class="col-md-6" style="min-height: 390px;">
+			<div class="m-portlet m-portlet--tab">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+					<div class="m-portlet__head-title">
+						<span class="m-portlet__head-icon m--hide">
+						<i class="la la-gear"></i>
+						</span>
+						<h3 class="m-portlet__head-text">
+							<span> Sign up for an account</span>
+						</h3>
+					</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm.form)" class="m-login__form m-form m-signup-form" novalidate action="">
+						<ng-template #alertSignup></ng-template>
+						<div class="login-form m-signup">
+							<ng-container *ngIf="!inviteToken">
+								<div class="form-group m-form__group">
+									<div class="input-group">
+									<input class="form-input" type="text" placeholder="yoursitename" name="subdomain" [(ngModel)]="model.subdomain" id="subdomain" required>
+									<span class="input-group-addon" style="height: 32px;">.kumolus.com</span>
+									</div>
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-input" type="email" placeholder="Email" name="unconfirmed_email" email="true" [pattern]="emailPattern" required
+									[(ngModel)]="model.unconfirmed_email"
+										#unconfirmed_email="ngModel" id="unconfirmed_email">
+								</div>
+								<div *ngIf="unconfirmed_email.invalid && (unconfirmed_email.dirty || unconfirmed_email.touched)" class="form-control-feedback">
+									<div *ngIf="unconfirmed_email.errors.required">
+										Please enter the email id.
+									</div>
+									<div *ngIf="unconfirmed_email.errors.pattern">
+										Please enter the correct email id.
+									</div>
+								</div>
+							</ng-container>
+				
+							<div class="form-group m-form__group">
+								<input class="form-input" type="text" placeholder="Username" name="username" minlength="3" maxlength="30" required [(ngModel)]="model.username" #username="ngModel">
+							</div>
+							<div *ngIf="username && username.invalid && (username.dirty || username.touched)" class="form-control-feedback">
+								<div *ngIf="username.errors.required">
+									Please enter the username.
+								</div>
+								<div *ngIf="username.errors.minlength">
+									Username must be at least 3 characters long.
+								</div>
+							</div>
+				
+							<div class="form-group m-form__group">
+								<input class="form-input" type="password" placeholder="Password" name="password" minlength="8" maxlength="40" required [(ngModel)]="model.password"
+									#password="ngModel">
+							</div>
+							<div *ngIf="password.invalid && (password.dirty || password.touched)" class="form-control-feedback">
+								<div *ngIf="password.errors.required">
+									Please enter the password.
+								</div>
+								<div *ngIf="password.errors.minlength">
+									Password must be at least 8 characters long.
+								</div>
+							</div>
+				
+							<div class="form-group m-form__group">
+								<input class="form-input" type="password" placeholder="Confirm Password" id="password_confirmation" name="password_confirmation" validateEqual="password"
+									minlength="8" required [(ngModel)]="model.password_confirmation" #password_confirmation="ngModel">
+							</div>
+							<div *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)" class="form-control-feedback">
+								<div *ngIf="password_confirmation.errors.required">
+									please enter confirm password.
+								</div>
+								<div *ngIf="password_confirmation.errors.minlength">
+									This should match with password.
+								</div>
+								
+							</div>
+				
+							<div class="form-group m-form__group">
+								<label class="m-checkbox m-checkbox--focus">
+									<input type="checkbox" class="form-input" name="agree" [(ngModel)]="model.agree" #agree="ngModel" required> I agree to the
+									<a href="https://kumolus.com/terms-conditions" class="m-link m-link--focus m-sinup-link">
+										Kumolus terms of service.
+									</a>
+									<span></span>
+								</label>
+								<span class="m-form__help"></span>
+								<div *ngIf="agree.invalid && (agree.dirty || agree.touched)" class="form-control-feedback">
+									<div *ngIf="agree.errors.required">
+										Please accept the terms of service to proceed.
+									</div>
+								</div>
+							</div>
+							<div class="m-login__form-action">
+								<button type="submit"  [ngClass]="{'m-loader m-loader--right m-loader--light': loading,'m-disabled':loading || !signupForm.form.valid}"
+									id="m_login_signup_submit" class="m-btn-form">
+									Sign Up
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
