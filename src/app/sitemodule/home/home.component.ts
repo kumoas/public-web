@@ -15,13 +15,13 @@ import * as moment from 'moment-timezone';
   styleUrls: ['./home.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
 
  public  user: any  = {};
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   isSaving = false;
 
-  constructor(private _script: ScriptLoaderService, private modalService: NgbModal, private userService: UserService, private _flashMessagesService: KumolusFlashService) { }
+  constructor(private _script: ScriptLoaderService, private modalService: NgbModal, /* private userService: UserService, */ private _flashMessagesService: KumolusFlashService) { }
 
   ngOnInit() {
     window.scrollTo(0, 0);
@@ -41,15 +41,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     var self = this;
     self.isSaving = true;
 
-    self.userService.request_demo(comingObject).then(data => {
-      self._flashMessagesService.show('success', 'Schedule a Demo Successfully.');
-      $('#requestDemo').modal('hide');
-      self.isSaving = false;
-    }, function (err) {
-      let errMsg = "Failed to load filerlist.";
-      self.isSaving = false;
-      self._flashMessagesService.show(errMsg, { cssClass: 'alert-danger', timeout: 10000 });
-    });
+    // self.userService.request_demo(comingObject).then(data => {
+    //   self._flashMessagesService.show('success', 'Schedule a Demo Successfully.');
+    //   $('#requestDemo').modal('hide');
+    //   self.isSaving = false;
+    // }, function (err) {
+    //   let errMsg = "Failed to load filerlist.";
+    //   self.isSaving = false;
+    //   self._flashMessagesService.show(errMsg, { cssClass: 'alert-danger', timeout: 10000 });
+    // });
   }
 
   ngAfterViewInit() {
@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       var dateToday = new Date();
       var default_format = "YYYY-MM-DD hh:mm A";
       var def_timezone = "Australia/Brisbane";
-      self.user['start_date'] = moment(dateToday).tz(def_timezone).format(default_format); 
+      // self.user['start_date'] = moment(dateToday).tz(def_timezone).format(default_format); 
 
       $('#start_date').datetimepicker({
           format: 'yyyy-mm-dd hh:ii',
@@ -70,7 +70,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
           pickerPosition: 'bottom-left'                    
       }).on('changeDate', (ev) => {
         let self = this;
-        self.user["start_date"] = moment(ev.date).tz(def_timezone).format(default_format);
+        // self.user["start_date"] = moment(ev.date).tz(def_timezone).format(default_format);
       }); 
   }
 

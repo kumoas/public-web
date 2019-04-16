@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { SiteModule } from "./sitemodule/site.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     SiteModule,
+    CoreModule,
     AppRoutingModule,
     NgbModule.forRoot()
   ],
