@@ -15,6 +15,7 @@ import { PricingComponent } from './pricing/pricing.component';
 import { TermsComponent } from './terms/terms.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { AboutComponent } from './about/about.component';
+import { WorkspaceComponent } from './workspace/workspace.component';
 
 
 const routes: Routes = [
@@ -63,6 +64,10 @@ const routes: Routes = [
                 "component": AboutComponent,  
             },
             {
+                "path": "workspace",
+                "component": WorkspaceComponent,
+            },
+            {
                 "path": "",
                 "redirectTo": "home",
                 "pathMatch": "full"
@@ -81,7 +86,8 @@ const routes: Routes = [
         PartnersComponent,
         TermsComponent,
         PrivacyComponent,
-        AboutComponent
+        AboutComponent,
+        WorkspaceComponent
     ],
     imports: [FormsModule,NgbModule.forRoot(),CommonModule, SitLayoutModule, RouterModule.forChild(routes)],
     exports: [RouterModule, SiteComponent]

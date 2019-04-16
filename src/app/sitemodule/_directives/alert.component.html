@@ -1,0 +1,10 @@
+<div *ngIf="message" class="m-alert m-alert--outline alert alert-{{message.type}} alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+	<span *ngIf="message.type == 'success'"> {{message.text}}</span>
+	
+	<ul *ngIf="validationMsg.validation_errors">
+		<li *ngFor="let msg of validationMsg.validation_errors">
+			<b>{{msg[0]}}:</b><span> {{msg[1]}}</span>
+		</li>
+	</ul>
+</div>
