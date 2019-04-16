@@ -1,0 +1,929 @@
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+  <div class="m-stack m-stack--ver m-stack--desktop inner-banner-pricing m-nav-top">
+    <h1 class="text-center inner-banner-text">Choose an offering that meets your needs</h1>
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-xl-3">
+          <div class="m-portlet m--bg-accent m-pricing-accent m-portlet--bordered-semi m-portlet--skin-dark m-portlet--full-height ">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text m-widget-color">
+                    Explorer
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="circle">
+              <p>Free</p>
+            </div>
+            <div class="m-portlet__body">
+              <div class="m-widget7 m-widget7--skin-dark">
+                <div class="m-widget7__desc m-pricing-content m-widget-color">
+                  Gain visibility of your existing environments and identify optimisation opportunities.
+                </div>
+                <div class="m-widget7__desc">
+                  <button type="button" class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg" [routerLink]="['/auth/signup']">
+                    Get Started
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="m-portlet m--bg-accent m-pricing-accent  m-portlet--bordered-semi m-portlet--skin-dark m-portlet--full-height ">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text m-widget-color">
+                    CMP (SaaS)
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="circle">
+              <p>3-4%</p>
+            </div>
+            <div class="m-portlet__body">
+              <div class="m-widget7 m-widget7--skin-dark">
+                <div class="m-widget7__desc m-pricing-content m-widget-color">
+                  of your managed cloud cost. No minimum commitment
+                </div>
+                <div class="m-widget7__desc m-price-header">
+                  <button type="button" class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg" [routerLink]="['/auth/signup']">
+                    Start a free trial
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <div class="m-portlet m--bg-accent m-pricing-accent m-portlet--bordered-semi m-portlet--skin-dark m-portlet--full-height ">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text m-widget-color">
+                    CMP (Enterprise)
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="circle">
+              <p>Contact Us?</p>
+            </div>
+            <div class="m-portlet__body">
+              <div class="m-widget7 m-widget7--skin-dark">
+                <div class="m-widget7__desc m-pricing-content m-widget-color">
+                  Minimum commitments based on usage ranges.
+                </div>
+                <div class="m-widget7__desc m-cmp-header">
+                  <button type="button" class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg">
+                    <a class="m-widget4__cmp" href="https://aws.amazon.com/marketplace/pp/B019OULQNQ/ref=_ptnr_web" target="_blank">Start a free trial</a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <h3 class="m-subheader__title m-subheader__title--separator  m-pricing-text">
+      Or
+    </h3>
+  </div>
+  <div class="row justify-content-center">
+    <span class="m-cmp-body m-price-align m-price-text" (click)="openCompare(content)">Compare All</span>
+  </div>
+  <div class="row pricing-section">
+    <div class="col-lg-7 col-md-7 col-sm-12">
+      <h3 class="m-subheader__title m-subheader__title--separator  m-pricing-text">
+        How our usage based pricing works
+      </h3>
+      <h3 class="m-subheader__title m-subheader__title--separator m-pricing-text">
+        Flexible pricing that suits your needs
+      </h3>
+      <p>
+        We’ve developed a simple to understand pricing structure, where our fees are based on the amount of cloud services you choose
+        to manage. With our SaaS offering, you only pay for what you manage. The Enterprise solution introduces usage ranges
+        so you have the flexibility to choose the profile that fits your current cloud position and growth plans.
+      </p>
+      <h3 class="m-subheader__title m-subheader__title--separator  m-pricing-text">
+        Lower rates for larger consumers
+      </h3>
+      <p>
+        The more you manage the lower the rate.
+      </p>
+    </div>
+    <div class="col-lg-5 col-md-5 col-sm-12">
+      <img src="assets/app/media/img/sitemodule/tree.png">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-12 col-lg-12">
+      <div class="m-portlet  m-portlet--full-height">
+        <div class="m-portlet__head">
+          <div class="m-portlet__head-caption">
+            <div class="row">
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="m-widget4 m-widget-tab" (click)="togglepricing('explorer')" [ngClass]="activityType==='explorer'?'pricing-active':'pricing-inactive'">
+                  <div class="m-widget4__item" (click)="togglepricing('explorer')">
+                    <div class="m-widget4__img m-widget4__img--pic">
+                      <img src="assets/app/media/img/sitemodule/viewer.png" alt="">
+                    </div>
+                    <div class="m-widget4__info">
+                      <span class="m-widget4__title m-pricing-tab" [ngClass]="activityType==='explorer'?'m-pricing-active':'m-pricing-inactive'">
+                        Explorer
+                      </span>
+                      <br>
+                      <span class="m-widget4__sub m-pricing-sub" [ngClass]="activityType==='explorer'?'m-pricing-active':'m-pricing-inactive'">
+                        Gain visibility of your existing environments
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4" [ngClass]="activityType==='cmpSaas'?'pricing-active':'pricing-inactive'">
+                <div class="m-widget4 m-widget-tab" (click)="togglepricing('cmpSaas')">
+                  <div class="m-widget4__item">
+                    <div class="m-widget4__img m-widget4__img--pic">
+                      <img src="assets/app/media/img/sitemodule/viewer.png" alt="">
+                    </div>
+                    <div class="m-widget4__info">
+                      <span class="m-widget4__title m-pricing-tab" [ngClass]="activityType==='cmpSaas'?'m-pricing-active':'m-pricing-inactive'">
+                        CMP (SaaS)
+                      </span>
+                      <br>
+                      <span class="m-widget4__sub m-pricing-sub" [ngClass]="activityType==='cmpSaas'?'m-pricing-active':'m-pricing-inactive'">
+                        Flexible pricing that grows with you
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="m-widget4 m-widget-tab" (click)="togglepricing('cmpEnterprise')" [ngClass]="activityType==='cmpEnterprise'?'pricing-active':'pricing-inactive'">
+                  <div class="m-widget4__item">
+                    <div class="m-widget4__img m-widget4__img--pic">
+                      <img src="assets/app/media/img/sitemodule/viewer.png" alt="">
+                    </div>
+                    <div class="m-widget4__info">
+                      <span class="m-widget4__title m-pricing-tab" [ngClass]="activityType==='cmpEnterprise'?'m-pricing-active':'m-pricing-inactive'">
+                        CMP (Enterprise)
+                      </span>
+                      <br>
+                      <span class="m-widget4__sub m-pricing-sub" [ngClass]="activityType==='cmpEnterprise'?'m-pricing-active':'m-pricing-inactive'">
+                        Hosted in your own Cloud Enviroment
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="m-portlet__body">
+          <ng-container *ngIf="activityType == 'explorer'">
+            <div class="row justify-content-center">
+              <h3 class="m-subheader__title m-subheader__title--separator m-explorer-text">
+                Free! Gain visibility of your existing environments and identify optimisation opportunities.
+              </h3>
+              <div>
+                <button class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg" [routerLink]="['/auth/signup']" type="button">
+                  Start as Explorer
+                </button>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="activityType == 'cmpSaas'">
+            <div>
+              <span class="m-cmp-text">The more you manage the lower the rate
+                <span class="m-cmp-inner-text" ngbTooltip="You spend $6K/mo on your AWS or Azure bill.
+                  $1200 of this relates to a Direct Connection and Traffic usage.
+                  $800 is on services we can't calculate or we don't manage, ie. snapshots aren’t able to be accurately calculated and we don't support services like Workspaces.
+                  $4000 is on services we have under management and provide you with visibility on. We would charge 4% of this cost.">An example of our SaaS pricing</span>
+              </span>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-xl-3">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Starters
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Cloud Usage
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                0-50k/mo
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-pricing-subhead-text">
+                                4%
+                              </span>
+                              <br>
+                              <span class="m-widget4__title">
+                                of Managed Cloud Cost
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Included Support
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                Basic
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Adopters
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Cloud Usage
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                50k-100k/mo
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-pricing-subhead-text ">
+                                3%
+                              </span>
+                              <br>
+                              <span class="m-widget4__title">
+                                of Managed Cloud Cost
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Included Support
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                Basic
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3">
+                <div class="m-portlet m-portlet--full-height m-price-color">
+                  <div class="m-portlet__head">
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-pricing-cmp-text">
+                                Need to manage more than
+                              </span>
+                              <br>
+                              <span class="m-pricing-cmp-text">
+                                $100k
+                              </span>
+                              <span class="m-pricing-cmp-text">
+                                A Month?
+                              </span>
+                              <span class="m-pricing-cmp-text">
+                                Lets Talk
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <button class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg" [routerLink]="['/auth/signup']"  type="button">
+                  Start a free trial
+                </button>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="activityType == 'cmpEnterprise'">
+            <h3 class="m-cmp-text">Hosted Enterprise Solution</h3>
+            <div class="row justify-content-center">
+              <div class="col-xl-3">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Enterprise provides peace of mind
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-cmp-body">
+                                Supports SAML
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-cmp-body">
+                                Hosted inside your network.
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-cmp-body">
+                                Data is stored in your region.
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-cmp-body">
+                                Available through the AWS Marketplace.
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-cmp-body">
+                                Delivered as an AMI.
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Small
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Cost
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                $1250
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Included up to
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                10k/month
+                              </span>
+                              <span class="m-widget4__title">
+                                Cloud services under management
+                              </span>
+                              <br>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Support
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                Business
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Medium
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Cost
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                $3750
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Included up to
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                25k/month
+                              </span>
+                              <span class="m-widget4__title">
+                                Cloud services under management
+                              </span>
+                              <br>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Support
+                              </span>
+                              <br>
+                              <span class="m-cmp-body m-pricing-subhead-text">
+                                Business
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2">
+                <div class="m-portlet m-portlet--full-height ">
+                  <div class="m-portlet__head m-pricing-head">
+                    <div class="m-portlet__head-caption">
+                      <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text m-pricing-head-text">
+                          Large
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Cost
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                $6250
+                              </span>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Included up to
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                50k/month
+                              </span>
+                              <span class="m-widget4__title">
+                                Cloud services under management
+                              </span>
+                              <br>
+                            </div>
+                          </div>
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-widget4__title">
+                                Support
+                              </span>
+                              <br>
+                              <span class="m-pricing-subhead-text">
+                                Business
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2">
+                <div class="m-portlet m-portlet--full-height m-price-color">
+                  <div class="m-portlet__head">
+                  </div>
+                  <div class="m-portlet__body">
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="m_widget4_tab1_content">
+                        <div class="m-widget4">
+                          <div class="m-widget4__item">
+                            <div class="m-widget4__info">
+                              <span class="m-pricing-cmp-text">
+                                Need to manage more than
+                              </span>
+                              <br>
+                              <span class="m-pricing-cmp-text">
+                                $100k
+                              </span>
+                              <span class="m-pricing-cmp-text">
+                                A Month?
+                              </span>
+                              <span class="m-pricing-cmp-text">
+                                Lets Talk
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-md-4">
+                <button class="btn m-btn--pill  btn-info m-btn--wide m-btn--uppercase m-btn--bolder m-btn--lg" [routerLink]="['/auth/signup']" type="button">
+                  Start a free trial
+                </button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title"> Compare Features</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="m-portlet__body row">
+      <div class="col-12 table-responsive">
+        <table class="table m-table m-table--head-bg-brand kumolus_tbl kumolus_device_tbl">
+          <thead>
+            <tr>
+              <td></td>
+              <td>Explorer
+              </td>
+              <td>CMP (SaaS)
+              </td>
+              <td>CMP (Enterprise)
+              </td>
+            </tr>
+          </thead>
+          <thead>
+            <tr>
+              <th>Build and Manage</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Template Designer (Provisioning, Cost Forecast, Revisions)</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Manage (Changes, Documentation, revisions)</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>Discover</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Visualisation</td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Service Adviser</td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Full Discovery</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Synchronization</td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>Govern</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Workload Placement</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Technology Selection</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Key Management</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>RBAC</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>Report</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Finance</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Usage</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>Authentication</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Local Users</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>SAML</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+
+          <thead>
+            <tr>
+              <th>Virtual Appliance (AWS Marketplace)</th>
+              <th>
+                <div class="no"></div>
+              </th>
+              <th>
+                <div class="no"></div>
+              </th>
+              <th>
+                <div class="yes"></div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Data stored in your AWS Region</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+            <tr>
+              <td>Hosted inside your Region</td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="no"></div>
+              </td>
+              <td>
+                <div class="yes"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-template>

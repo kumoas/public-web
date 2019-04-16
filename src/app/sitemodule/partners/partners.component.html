@@ -1,0 +1,306 @@
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+  <div class="m-stack m-stack--ver m-stack--desktop inner-banner m-nav-top">
+    <div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+      <h2 class="text-center">Are you interested in helping your customers achieve agility in the cloud?</h2>
+    </div>
+  </div>
+</div>
+
+<div class="solutions-tab-new">
+  <div class="m-content">
+    <div class="m-portlet m-portlet--tabs">
+      <div class="m-portlet__head m-tab-header">
+        <div class="m-portlet__head-tools responsive-device-tabs">
+          <ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--right m-tabs-line-danger m-tab-position" role="tablist">
+            <li class="features-tab m-tab" [ngClass]="activityType==='consulting'?'btn-light':'btn-secondary'" (click)="togglePartners('consulting')">
+              <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-link m-partners-content" aria-expanded="true">
+                Consulting Partners
+              </span>
+            </li>
+
+            <li class="features-tab m-tab" [ngClass]="activityType==='technology'?'btn-light':'btn-secondary'" (click)="togglePartners('technology')">
+              <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-linklink m-partners-content" aria-expanded="true">
+                Technology Partners
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+  <div class="container">
+    <ng-container *ngIf="activityType =='consulting'">
+      <div class="partners-section">
+        <h2 class="text-center">Consulting Partners</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list persistant">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list techmahindra">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Asia Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list detamatics">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list rightcloud">
+              <div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Asia Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list cloudnayan">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    India
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list oman">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    India
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list trianz">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Australian Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list cloudten">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list deloitte">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list sacon">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list polerseven">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="m-partners-section">Kumolus is currently growing its partner network. If you are interested in knowing how the Kumolus Cloud Management
+          platform can become part of your business, please contact us.</p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="activityType =='technology'">
+      <div class="partners-section">
+        <h2 class="text-center">Technology Partners</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-3 offset-md-3">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="tab-content partners-list aws">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="m-portlet__body partners-list azure">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="m-portlet__body partners-list netapp">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="m-portlet__body partners-list puppet">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-2">
+          <div class="m-portlet">
+            <div class="m-portlet__head">
+              <div class="m-portlet__head-caption">
+                <div class="m-portlet__head-title">
+                  <h3 class="m-portlet__head-text">
+                    Global Partners
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="m-portlet__body partners-list splunk">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="m-partners-section">Kumolus currently supports integrations into the following technology partners. For further information on having
+          your platform integrate with Kumolus, please contact us.</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

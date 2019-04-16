@@ -1,0 +1,50 @@
+  .m-tab-header{
+    background-color: #e7e7e7;
+  }
+  .m-nav-top{
+    margin-top: 70px;
+  }
+  .m-nav-term{
+    margin-top: 100px;
+  }
+  .inner-banner {
+    background: url(/assets/app/media/img/sitemodule/inner-banner.jpg);
+    height: 215px;
+    position: relative;
+}
+.text-center{
+  text-align: center;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  .m-nav-top {
+    margin-top: 54px;
+  }
+}
+.legal-content p{
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  margin: 0 0 30px;
+  text-align: justify;
+  font-weight: 600;
+}
+.legal-content h1 {
+  color: #7eced2;
+  text-align: left;
+  font-size: 24px;
+  margin: 0 0 24px;
+}
+.legal-content p.date {
+  font-size: 14px;
+  line-height: 20px;
+  color: #666;
+  margin: -20px 0 30px;
+  font-style: italic;
+}
+.legal-content h2 {
+  color: #666;
+  text-align: left;
+  font-size: 24px;
+  margin: 0 0 24px;
+}

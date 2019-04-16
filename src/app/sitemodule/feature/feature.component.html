@@ -1,0 +1,285 @@
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+    <div class="m-stack m-stack--ver m-stack--desktop inner-banner m-nav-top">
+        <div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+            <h1 class="text-center m-feature-header">Enterprise Cloud Management Platform</h1>
+            <p class="inner-banner-content text-center">Kumolus provides the visibility and control organizations need to manage IT services in the Cloud</p>
+        </div>
+    </div>
+</div>
+<div class="solutions-tab-new">
+    <div class="m-content">
+        <div class="m-portlet m-portlet--tabs">
+            <div class="m-portlet__head m-tab-header">
+                <div class="m-portlet__head-tools responsive-device-tabs">
+                    <ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--right m-tabs-line-danger m-tab-position" role="tablist">
+                        <li class="features-tab m-tab" [ngClass]="activityType==='automation'?'btn-light':'btn-secondary'" (click)="togglefeature('automation')">
+                            <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-link m-solutions-content discover" aria-expanded="true">
+                                Explorer
+                            </span>
+                        </li>
+
+                        <li class="features-tab m-tab" [ngClass]="activityType==='cloudManagement'?'btn-light':'btn-secondary'" (click)="togglefeature('cloudManagement')">
+                            <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-linklink m-solutions-content" aria-expanded="true">
+                                Cloud Management
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="activityType == 'automation'">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="features-block">Discover</h2>
+            <button class="btn btn-accent m-btn feature-video" (click)="open(content)">
+                <span>Video</span>
+            </button>
+        </div>
+        <div class="row">
+            <ng-template #content let-c="close" let-d="dismiss">
+                <div class="modal-header">
+                    <h4 class="modal-title">Kumolus - Free AWS Explorer</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://player.vimeo.com/video/164100278" class="iframe-video" frameborder="0" webkitallowfullscreen mozallowfullscreen
+                        allowfullscreen></iframe>
+                    <p class="iframe-text">
+                        <a href="https://vimeo.com/164100278">Kumolus - Free AWS Explorer</a> from
+                        <a href="https://vimeo.com/kumolus">Kumolus - Cloud Management</a> on
+                        <a href="https://vimeo.com">Vimeo</a>.</p>
+                </div>
+            </ng-template>
+        </div>
+        <div class="row">
+            <h5 class="content">
+                Gain visibility of your existing cloud environments and identify opportunities for service optimisation.
+            </h5>
+            <img class="feature-img" src="assets/app/media/img/sitemodule/feature-02.png" alt="Cloud – Existing AWS environment discovered">
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-06">
+                <h2>Visibility</h2>
+                <p>It is difficult to manage what you can’t see. Get a picture of your cloud environments in minutes.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-07">
+                <h2>Synchronization</h2>
+                <p>Detect your existing cloud environments and maintain synchronization with the service provider.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-sa">
+                <h2>Service Adviser</h2>
+                <p>Find cost optimization opportunities across your cloud services.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-08">
+                <h2>Documentation</h2>
+                <p>Create real time documentation based on your active cloud services.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-09">
+                <h2>Transparency</h2>
+                <p>Delivers full transparency of your cloud services and environments.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12 feature-learn">
+                <button class="btn btn-accent m-btn" [routerLink]="['/solution']">
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="m-feature-block">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <h1 class="punchline m-feature-background-top">Service optimisation identification</h1>
+                    <h6>The Explorer will highlight the services in your environment that could be optimised.</h6>
+                    <img class="feature-img" src="assets/app/media/img/sitemodule/feature-05.png" alt="Cloud – Existing AWS environment discovered">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <button class="btn btn-accent m-btn m-feature-btn" [routerLink]="['/auth/signup']">
+                        <span>Use for Free – Signup!</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="activityType == 'cloudManagement'">
+    <div class="container">
+        <h2 class="text-center">Automation and Orchestration</h2>
+        <div class="row">
+            <h5 class="content">
+                Deploy and Automate Complex Cloud Environments with ease.
+            </h5>
+            <img class="feature-img" src="assets/app/media/img/sitemodule/feature-01.png" alt="Cloud – Existing AWS environment discovered">
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-06">
+                <h2>Visual Template Editor</h2>
+                <p>It is difficult to manage what you can’t see. Get a picture of your cloud environments in minutes.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-07">
+                <h2>Multi Cloud</h2>
+                <p>Integration with multiple cloud providers allows you to choose the service that best meets your needs.
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-sa">
+                <h2 class="punchline">Automated Governance and Security</h2>
+                <p>Automate the enforcement of your policies as part of your build. i.e Use tagging to ensure all production
+                    environments are backed up from day one!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-2">
+
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-08">
+                <h2>Infrastructure as Code</h2>
+                <p>Kumolus delivers the automated provision of Infrastructure-as-Code to ensure organisations can adopt, maintain
+                    and manage their cloud configurations programmatically.</p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-09">
+                <h2>Executable Documentation</h2>
+                <p>Turn your Templates or Environments into high quality documentation. Review as a PDF design or press ‘go’
+                    to have it provisioned. Always current!</p>
+            </div>
+        </div>
+        <div class="row text-center feature-learn">
+            <div class="col-lg-12 col-md-12">
+                <button class="btn btn-accent m-btn" [routerLink]="['/solution']">
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="m-feature-block">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <h1 class="punchline m-feature-background-top">Governance and Security</h1>
+                    <h6>Enforce IT policies to maintain control of your cloud environments while still providing agility.</h6>
+                    <img class="feature-img" src="assets/app/media/img/sitemodule/feature-03.png" alt="Cloud – Govern your AWS/Azure and Openstack environments">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-06">
+                    <h2>Tagging</h2>
+                    <p>Enforce custom service tags across all of your objects to better manage your cloud services.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-07">
+                    <h2>Security and Compliance Adviser</h2>
+                    <p>Find and fix, security and compliance issues across your cloud services.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-sa">
+                    <h2>Workload Placement</h2>
+                    <p>Control your environments with workload placement rules – which cloud / VPC?</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-08">
+                    <h2>Key Management</h2>
+                    <p>Make sure access to your data is maintained across your organisation.</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-6 feature-list feature-09">
+                    <h2>Role Based Access Control</h2>
+                    <p>Control access across your teams or application groups.</p>
+                </div>
+            </div>
+            <div class="row text-center feature-learn">
+                <div class="col-lg-12 col-md-12">
+                    <button class="btn btn-accent m-btn" [routerLink]="['/solution','governance']">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12">
+                <h1 class="punchline">Cost Control and Bill Management</h1>
+                <h6> Understanding your cloud usage allows better management of the services being consumed.</h6>
+                <img class="feature-img" src="assets/app/media/img/sitemodule/feature-04.png" alt="Cloud – Govern your AWS/Azure and Openstack environments">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-15">
+                <h2>Service Adviser - Cost</h2>
+                <p>Find cost optimization opportunities across your cloud services.
+                </p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-14">
+                <h2>Financial</h2>
+                <p>Know who is spending what in your organisation.</p>
+            </div>
+        </div>
+        <div class="row m-feature-bill">
+            <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-16">
+                <h2>Asset</h2>
+                <p>Report on the assets consumed from the provider.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-17">
+                <h2>Operational</h2>
+                <p>Understand your usage to help manage your costs.</p>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-lg-12 col-md-12">
+                <button class="btn btn-accent m-btn m-feature-btn" [routerLink]="['/solution' ,'costControl']">
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="m-feature-block">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <h1 class="punchline m-feature-background-top">Cloud Operations and Reporting</h1>
+                    <h6> Gain visibility and take control of your cloud by managing performance, capacity and cost.</h6>
+                    <img class="feature-img" src="assets/app/media/img/sitemodule/solution-report-03-large.png" alt="Cloud – Govern your AWS/Azure and Openstack environments">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-06">
+                    <h2>Policy based Automation</h2>
+                    <p>Write policies that allow you to perform events automatically. i.e Shutdown and Startup instances based
+                        on their tags.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-07">
+                    <h2>Perform administration tasks at Scale</h2>
+                    <p>Administrator tasks per environment, or across multiple environments allowing you to perform bulk tasks
+                        based on requirements.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 feature-list feature-08">
+                    <h2>Configuration</h2>
+                    <p>Provides visibility into service hierarchies to track and report environment changes.</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12 col-md-12">
+                    <button class="btn btn-accent m-btn m-feature-btn" [routerLink]="['/solution' ,'cloudOperations']">
+                        <span>Learn More</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

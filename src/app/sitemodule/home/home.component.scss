@@ -1,0 +1,104 @@
+.text-center{
+  text-align: center;
+}
+
+.azure {
+    background-image: url(/assets/app/media/img/sitemodule/cloude-service-provider-sprite.png);
+    background-position: 10px 0;
+}
+.amazon {
+    background-image: url(/assets/app/media/img/sitemodule/cloude-service-provider-sprite.png);
+    background-position: -250px 0;
+}
+.technologies-wrapper ul li {
+    display: inline-block;
+    text-align: center;
+    height: 100px;
+    width: 265px;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease;
+}
+.technologies-text{
+    font-size: 18px;
+    color: #1f2a3a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.features-wrapper h1 {
+    text-align: center;
+    font-size: 36px;
+    margin: 60px 0 0;
+    color: #261d4b;
+}
+.features-wrapper p {
+    text-align: center;
+    margin: 10px 0 0;
+}
+.feature {
+    width: 136px;
+    height: 170px;
+    background-image: url(/assets/app/media/img/build-service-sprite.png);
+    background-repeat: no-repeat;
+    margin: auto;
+    pointer-events: none;
+}
+.m-features-wrapper h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #615f67;
+}
+.m-features-wrapper p {
+    font-size: 16px;
+    text-align: center;
+    color: #615f67;
+    font-weight: 500;
+}
+.feature-discover {
+    background-position: -167px 0;
+}
+.feature-govern {
+    background-position: -333px 0;
+}
+.feature-report {
+    background-position: -499px 0;
+}
+.feature-images {
+    position: relative;
+    margin: 60px 0 20px;
+}
+.iframe-video{
+    width:100%;
+     height:360px
+  }
+  .m-feature-btn{
+    margin-bottom: 20px;
+  }
+  .m-feature-btn{
+      cursor: pointer;
+  }
+  .slider-img{
+      width: 100%;
+  }
+.m-carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 20px;
+    left: 5%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: black;
+}
+.m-carousel-caption h3 {
+    margin: 80px 0 30px;
+    text-transform: uppercase;
+    line-height: 40px;
+    color: #261d4b;
+    font-size: 32px;
+}
+.m-carousel-caption p{
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 16px;
+}
+.datetimepicker{z-index:1151 !important;}

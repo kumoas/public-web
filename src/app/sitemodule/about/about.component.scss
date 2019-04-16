@@ -1,0 +1,41 @@
+.m-outer-img{
+    max-width: 273px;
+    padding: 25px;
+}
+.m-outer-img img{
+    width: 100%;
+}
+.m-img-text{
+    text-align: center;
+}
+
+.m-slider-img{
+    width: 100% !important;
+    margin-bottom: 12px;
+}
+.social-btn {
+    background-image: url(/assets/app/media/img/socialLogin-icon.png);
+    display: inline-block;
+    text-align: center;
+    height: 36px;
+    width: 36px;
+}
+.social-btn.sb-twitter {
+    background-position: 0px 0;
+}
+.social-btn.sb-linkedin {
+    background-position: 36px 0;
+}
+.m-about-sub {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.6;
+    display: block;
+    margin-bottom: 10px;
+}
+.m-about-text{
+    margin: 0;
+    font-size: 20px;
+    font-family: 'gotham_lightregular';
+    color: #fff;
+}

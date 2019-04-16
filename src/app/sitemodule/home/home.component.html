@@ -1,0 +1,206 @@
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+	<div class="m-stack m-stack--ver m-stack--desktop m-home-banner m-nav-top">
+		<div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+			<ngb-carousel>
+				<ng-template ngbSlide>
+					<img src="assets/app/media/img/sitemodule/banner-slide.png" alt="Random first slide" class="slider-img">
+					<div class="m-carousel-caption">
+						<h3>POWERING YOUR CLOUD</h3>
+						<p>Allowing you to acheive the benefits of cloud at scale</p>
+						<button class="btn btn-accent m-btn m-feature-btn" [routerLink]="['/auth/signup']" tabindex="0" ng-reflect-router-link="signup">
+							<span >Start your 30 day trial today</span>
+						</button>
+					</div>
+				</ng-template>
+				<ng-template ngbSlide>
+					<img src="assets/app/media/img/sitemodule/banner-slide-2.png" alt="Random second slide" class="slider-img">
+					<div class="m-carousel-caption">
+						<h3>IS YOUR CLOUD AT RISK?</h3>
+						<p>Allowing you to acheive the benefits of cloud at scale.</p>
+						<button class="btn btn-accent m-btn m-feature-btn" [routerLink]="['/auth/signup']" tabindex="0">
+							<span >Start your 30 day trial today</span>
+						</button>
+					</div>
+				</ng-template>
+			</ngb-carousel>
+		</div>
+	</div>
+</div>
+<!-- <div>
+</div> -->
+<div class="container-fluid">
+	<div class="row m-features-wrapper">
+		<div class="col-xl-12 col-lg-12">
+			<div class="m-portlet  m-portlet--full-height">
+				<div class="m-portlet__body">
+					<div class="row">
+						<div class="col-md-6 col-md-12">
+							<h3 class="technologies-text">Customized for your Cloud</h3>
+							<div class="row technologies-wrapper justify-content-center">
+								<ul>
+									<li class="azure" title="Windows Azure"></li>
+									<li class="amazon" title="Amazon web services"></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row m-features-wrapper">
+		<div class="col-xl-12 col-lg-12">
+			<div class="m-portlet  m-portlet--full-height">
+				<div class="m-portlet__head">
+					<div class="m-portlet__head-caption">
+						<div class="m-portlet__head-title features-wrapper">
+							<h1>
+								Built to usher in the next generation of IT-AS-A-SERVICE (Cloud)
+							</h1>
+							<p>
+								The Kumolus Cloud Management Platform Delivers :
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="m-portlet__body">
+					<div class="row feature-images">
+						<div class="col-md-3 col-sm-12">
+							<div class="feature feature-build-manage" title="Cloud – Build and Manage"></div>
+							<h2>Automation and Orchestration</h2>
+							<p>Deploy and Automate Complex Cloud Environments with ease</p>
+						</div>
+						<div class="col-md-3 col-sm-12">
+							<div class="feature feature-discover" title="Cloud – Discovery"></div>
+							<h2>Governance and Security</h2>
+							<p>Enforce IT policies to maintain control of your cloud environments while still providing agility</p>
+						</div>
+						<div class="col-md-3 col-sm-12">
+							<div class="feature feature-govern" title="Cloud – Governance"></div>
+							<h2>Cost Control and Bill Management</h2>
+							<p>Understanding your cloud usage allows better management of the services being consumed.</p>
+						</div>
+						<div class="col-md-3 col-sm-12">
+							<div class="feature feature-report" title="Cloud Reporting"></div>
+							<h2>Cloud Operations and Reporting</h2>
+							<p>Gain visibility and take control of your cloud by managing performance, capacity and cost.</p>
+						</div>
+					</div>
+					<div class="row text-center">
+						<div class="col-lg-12 col-md-12 feature-learn">
+							<button class="btn btn-accent m-btn" [routerLink]="['/features']">
+								<span>Learn More</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row m-features-wrapper">
+		<div class="col-xl-12 col-lg-12">
+			<div class="m-portlet  m-portlet--full-height">
+				<div class="m-portlet__body">
+					<div class="row">
+						<div class="col-md-12 col-sm-12">
+							<iframe src="https://player.vimeo.com/video/88104107" class="iframe-video" frameborder="0" webkitallowfullscreen mozallowfullscreen
+							 allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row text-center">
+		<div class="col-lg-12 col-md-12 feature-learn">
+			<button class="btn btn-accent m-btn m-feature-btn">
+				<span [routerLink]="['/auth/signup']">Start your 30 day trial today</span>
+			</button>
+		</div>
+		<div class="col-lg-12 col-md-12 feature-learn">
+			<span>Or</span>
+		</div>
+		<div class="col-lg-12 col-md-12 m-feature-btn">
+			<h3 class="technologies-text" (click)="openModel()">
+				Request a demo
+			</h3>
+		</div>
+	</div>
+	<div id="requestDemo" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="left">Schedule a Demo</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="col-md-12">
+					<div class="m-portlet m-portlet--tab">
+						<form class="m-form m-form--fit m-form--label-align-right" #requestForm="ngForm">
+							<div class="m-portlet__body">
+								<div class="form-group m-form__group row" [ngClass]="{'has-danger': username.invalid && username.dirty, 'has-success': username.valid }">
+									<label class="col-form-label col-4 col-sm-3" for="organisation_name">Name</label>
+									<div class="col-8 col-sm-9">
+										<input class="form-control ng-untouched ng-pristine ng-valid" [(ngModel)]="user['name']" name="user_name" type="text" #username="ngModel"
+										 [minlength]="3" [maxlength]="30" required>
+										<div [hidden]="username.valid || username.pristine" *ngIf="username.invalid && (username.dirty || username.touched)" class="form-control-feedback">
+											<div *ngIf="username.errors.required">
+												Username is required.
+											</div>
+											<div *ngIf="username.errors.minlength">
+												Username should have minimum 3 chars.
+											</div>
+											<div *ngIf="username.errors.maxlength">
+												Username should have maximum 30 chars.
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row" [ngClass]="{'has-danger': email.invalid && email.dirty, 'has-success': email.valid }">
+									<label class="col-form-label col-4 col-sm-3" for="organisation_name">Email</label>
+									<div class="col-8 col-sm-9">
+										<input class="form-control ng-untouched ng-pristine ng-valid" name="user_email" required="" type="text" [pattern]="emailPattern"
+										 [(ngModel)]="user.email" name="email" #email="ngModel" required>
+										<div [hidden]="email.valid || email.pristine" *ngIf="email.invalid && (email.dirty || email.touched)" class="form-control-feedback">
+											<div *ngIf="email.errors.required">
+												Email is required.
+											</div>
+											<div *ngIf="email.errors.pattern">
+												Please enter a valid email address. i.e test@testdomain.com
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group m-form__group row">
+									<label class="col-form-label col-lg-3" for="start_date">Starts On</label>
+									<div class="col-8 col-sm-9">
+										<div class="input-group date" id="start_date">
+											<input type="text" class="form-control m-input" [(ngModel)]="user.start_date" name="start_date" required #start_date="ngModel">
+											<span class="input-group-addon">
+												<i class="la la-calendar glyphicon-th"></i>
+											</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="m-portlet__foot m-portlet__foot--fit">
+									<div class="m-form__actions">
+										<button type="reset" class="btn btn-primary" [disabled]="!requestForm.form.valid" [ngClass]="{'m-loader m-loader--light m-loader--right' : isSaving}"
+										 (click)="submitQueryForm(user)">
+											Submit
+										</button>
+									</div>
+								</div>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

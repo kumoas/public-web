@@ -1,0 +1,65 @@
+  .footer-text{
+    margin-bottom: 5px;
+  }
+  .footer-wrapper {
+    background: #2a2735;
+}
+.footer-text span{
+  font-size: 14px;
+  color: #a5a5a5;
+  cursor: pointer;
+}
+.m-footer-header{
+  color: rgb(25, 130, 200);
+  margin-top: 10px;
+  font-size: 22px;
+}
+.small-6 {
+  width: 50%;
+}
+.m-tab{
+  cursor: pointer;
+}
+
+.socialmedia-links li {
+  display: block;
+  float: left;
+  height: 31px;
+  margin-right: 10px;
+  width: 31px;
+}
+.socialmedia-links li a {
+  background: url(/assets/app/media/img/sitemodule/footer-sprite.png) no-repeat scroll 0 0 rgba(0,0,0,0);
+  display: block;
+  height: 40px;
+  width: 36px;
+  transition: opacity 0.5s ease;
+}
+.socialmedia-links li a.vm {
+  background-position: 0px 0px;
+}
+.socialmedia-links li a.yt {
+  background-position: -37px 0px;
+}
+.socialmedia-links li a.gp {
+  background-position: -75px 0px;
+}
+.socialmedia-links li a.tw {
+  background-position: -112px 0;
+}
+.socialmedia-links li a.fb {
+  background-position: -150px 0;
+}
+.socialmedia-links li a.in {
+  background-position: -185px 0;
+}
+.m-social-icon{
+  margin-left: -42px;
+}
+.justify-content-center p{
+  margin-top: 10px;
+  color: #a5a5a5;
+}
+.m-footer-inner{
+  background: #10141a;
+}

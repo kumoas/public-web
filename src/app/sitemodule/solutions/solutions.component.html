@@ -1,0 +1,306 @@
+<div class="m-container m-container--responsive m-container--xxl m-container--full-height m-page__container">
+    <div class="m-stack m-stack--ver m-stack--desktop inner-banner m-nav-top">
+        <div class="m-stack__item m-stack__item--middle m-stack__item--fluid">
+            <h1 class="text-center m-solution-header">Agile Cloud Management Solutions</h1>
+            <p class="inner-banner-content text-center">Learn how Kumolus helps organizations manage their cloud environments.</p>
+        </div>
+    </div>
+</div>
+<div class="solutions-tab-new">
+    <div class="m-content">
+        <div class="m-portlet m-portlet--tabs">
+            <div class="m-portlet__head m-tab-header">
+                <div class="m-portlet__head-tools responsive-device-tabs">
+                    <ul class="nav nav-tabs m-tabs m-tabs-line m-tabs-line--right m-tabs-line-danger m-tab-position" role="tablist">
+                        <li class="solutions-tab m-tab" [ngClass]="activityType==='automation'?'btn-light':' btn-secondary'" (click)="togglesolution('automation')">
+                            <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-link m-solution-content" aria-expanded="true">
+                                Automation and Orchestration
+                            </span>
+                        </li>
+
+                        <li class="solutions-tab m-tab" [ngClass]="activityType==='governance'?'btn-light':' btn-secondary'" (click)="togglesolution('governance')">
+                            <span routerLinkActive="active" class=" govern nav-link m-tabs__link m-tab-linklink m-solution-content" aria-expanded="true">
+                                Governance and Security
+                            </span>
+                        </li>
+                        <li class="solutions-tab m-tab" [ngClass]="activityType==='costControl'?'btn-light':' btn-secondary'" (click)="togglesolution('costControl')">
+                            <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-linklink m-solution-content" aria-expanded="true">
+                                Cost Control and Bill Management
+                            </span>
+                        </li>
+                        <li class="solutions-tab m-tab" [ngClass]="activityType==='cloudOperations'?'btn-light':' btn-secondary'" (click)="togglesolution('cloudOperations')">
+                            <span routerLinkActive="active" class="nav-link m-tabs__link m-tab-linklink m-solution-content" aria-expanded="true">
+                                Cloud Operations and Reporting
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <ng-container *ngIf="activityType == 'automation'">
+            <h2>Automation and Orchestration</h2>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Design and Build your cloud environments</h3>
+                    <div class="m-text-format">Building a cloud environment involves many steps, including documenting system designs, setting up networks,
+                        selecting and sizing compute and database resources, assigning storage, defining access permissions,
+                        and understanding the cost. Through the Kumolus CMP, you can design environments based on a standardized
+                        set of cloud resources, review the forecast costs and then when ready press provision; within minutes
+                        you will have an operating environment running with your cloud provider.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(content)" src="assets/app/media/img/sitemodule/solution-build-manage-01.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #content let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Design and Build your cloud environments</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-build-manage-01.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Documentation - Always up to date</h3>
+                    <div class="m-text-format">With the agility of cloud comes the ability for rapid change; static IT environment diagrams and ‘as
+                        built’ documentation are no longer adequate. The Kumolus discovery engine provides a ‘real-time’
+                        up to date view of your IT environments and service configurations.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(documentation)" src="assets/app/media/img/sitemodule/solution-build-manage-02.jpg"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #documentation let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Documentation - Always up to date</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-build-manage-02.jpg" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>NetApp – OnCommand Cloud Manager full stack Orchestration</h3>
+                    <div class="m-text-format">Perform full stack orchestration and automation with NetApp NPS or ONTAP Cloud NFS, CIFS and iSCSI storage.
+                        This allows users to orchestrate the provision of NPS or ONTAP Cloud Storage on AWS or Azure via
+                        the Kumolus ‘drag & drop’ or API platform interfaces.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(netApp)" src="assets/app/media/img/sitemodule/solution-NetApp-01.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #netApp let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">NetApp – OnCommand Cloud Manager full stack Orchestration</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-build-manage-02.jpg" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="activityType == 'governance'">
+            <h2>Govern</h2>
+            <div class="m-text-format">Every organization is challenged by the question of “how do we balance governance and control with the need to
+                provide users the self-service agility and flexibility that cloud IT provides? The Kumolus platform allows
+                you to implement ‘fine-grain’ access controls across the user community to achieve the governance and control
+                you need.
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Manage your teams</h3>
+                    <div class="m-text-format">We understand that organizations are continuously changing and a one size fits all approach is not appropriate.
+                        The Kumolus platform allows you to create and modify custom roles based on your organizational needs
+                        and the cloud services you have available.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(team)" src="assets/app/media/img/sitemodule/solution-govern-01.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #team let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Manage your teams</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-govern-01.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Automate your security policies</h3>
+                    <div class="m-text-format">Kumolus provides a consistent and centralized way to provision, apply and automate security services
+                        to deliver policy based control and visibility across your cloud resources.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(automate)" src="assets/app/media/img/sitemodule/solution-govern-02.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #automate let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Automate your security policies</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-govern-02.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Limit technology sprawl</h3>
+                    <div class="m-text-format">The ability to provision cloud services needs to be managed or you risk technology proliferation and
+                        spiralling costs. Kumolus allows you to set rules around what different groups and / or individuals
+                        in your organization can do. For example, using the Kumolus Role Based Access Control functionality
+                        would allow you to limit a development team to only provision current Linux based instances with
+                        a certain size PostgreSQL databases and in a specific private network.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(limit)" src="assets/app/media/img/sitemodule/solution-govern-02.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #limit let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Limit technology sprawl</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-govern-02.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="activityType == 'costControl'">
+            <h2>Cost Control and Bill Management</h2>
+            <div class="m-text-format">Explore and analyze your billing & usage data to understand spending patterns, discover trends, identify budget
+                overruns and highlight expenditure abnormalities. Share this cost & usage information with stakeholders so
+                they have the insight necessary to adapt and manage their cloud usage accordingly.
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Review your spending</h3>
+                    <div class="m-text-format">Whether supporting one or one hundred environments, Kumolus allows you the flexibility to break down
+                        your costs across the organization as you need. The reporting tool provides for the creation of reports
+                        by account, team, application, environments or even down to identification of the highest cost service
+                        in your environment.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(review)" src="assets/app/media/img/sitemodule/solution-report-01.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #review let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Review your spending</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-report-01.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Chargeback</h3>
+                    <div class="m-text-format">Through custom tagging, every departments and team can be provided with visibility into their cloud usage
+                        allowing them to be responsible for their own costs.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(chargeback)" src="assets/app/media/img/sitemodule/solution-report-02.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #chargeback let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Chargeback</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-report-02.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="activityType == 'cloudOperations'">
+            <h2>Cloud Operations and Reporting</h2>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Track your environment changes</h3>
+                    <div class="m-text-format">According to Gartner, up to 80% of system outages are due to unplanned changes within the IT environment.
+                        Kumolus allows for the continuous monitoring and recording of environment changes to allow easy identification
+                        of incidents.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(track)" src="assets/app/media/img/sitemodule/solution-report-03.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #track let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Track your environment changes</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-report-03.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row solution-block">
+                <div class="col-md-7 col-sm-12">
+                    <h3>Know your assets</h3>
+                    <div class="m-text-format">Kumolus allows you to set custom tagging rules, including mandatory rules on every cloud object within
+                        the environment. Whether it is a operationally triggered snapshot or a security group added as part
+                        of a security change, Kumolus custom tagging ensures these movements can be tracked.
+                    </div>
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <img class="m-solution-img" (click)="open(assets)" src="assets/app/media/img/sitemodule/solution-govern-03.png"
+                        alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                </div>
+                <ng-template #assets let-c="close" let-d="dismiss">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Know your assets</h4>
+                        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="m-model-img" src="assets/app/media/img/sitemodule/solution-govern-03.png" alt="Cloud – use our Drop and Drag interface to design templates to reduce your time">
+                    </div>
+                </ng-template>
+            </div>
+        </ng-container>
+    </div>
+</div>
