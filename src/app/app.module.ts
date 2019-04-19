@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SiteModule } from "./sitemodule/site.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {CoreModule} from './core/core.module';
-
+import { FlashMessagesModule } from 'angular2-flash-messages';
 @NgModule({
   declarations: [
     AppComponent
@@ -18,6 +18,7 @@ import {CoreModule} from './core/core.module';
     SiteModule,
     CoreModule,
     AppRoutingModule,
+    FlashMessagesModule,
     NgbModule.forRoot()
   ],
   providers: [],

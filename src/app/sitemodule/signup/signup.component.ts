@@ -9,7 +9,7 @@ import { FlashMessagesService } from 'angular2-flash-messages';
 @Component({
     selector: "kumo-auth-signup",
     templateUrl: './signup.component.html',
-    styleUrls:['./signup.component.scss'],
+    styleUrls: ['./signup.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
 
@@ -28,7 +28,7 @@ export class SignupComponent implements OnInit {
     // TODO: Need to remove unconfirmed_email. need to solve error on build
     unconfirmed_email: any;
     inviteToken: any = '';
-    signupasOptions= [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
+    signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     @ViewChild('alertSignup', { read: ViewContainerRef }) alertSignup: ViewContainerRef;
@@ -37,7 +37,8 @@ export class SignupComponent implements OnInit {
         private _route: ActivatedRoute,
         private _authService: AuthenticationService,
         private _alertService: AlertService,
-        private cfr: ComponentFactoryResolver,) {
+        private cfr: ComponentFactoryResolver,
+        private flashMessagesService: FlashMessagesService) {
     }
 
     ngOnInit() {
@@ -57,22 +58,22 @@ export class SignupComponent implements OnInit {
         }
         this._authService.signup(this.model)
             .subscribe(
-            data => {
-               
-                this.loading = false;
-                this._router.navigate(['/workspace']);
-                if(self.model.invite_token){
-                //    this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
-                } else {
-                //    this.flashMessagesService.show('Thanks for signing up to Kumolus. You will receive an email, please click the link on the email to confirm your registration.', { cssClass: 'alert-success', timeout: 2000 })
-                }
-                this.model = {};
-            },
-            error => {
-                this.showAlert('alertSignup');
-                this._alertService.error(error);
-                this.loading = false;
-            });
+                data => {
+
+                    this.loading = false;
+                    this._router.navigate(['/workspace']);
+                    if (self.model.invite_token) {
+                        this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
+                    } else {
+                        this.flashMessagesService.show('Thanks for signing up to Kumolus. You will receive an email, please click the link on the email to confirm your registration.', { cssClass: 'alert-success', timeout: 2000 })
+                    }
+                    this.model = {};
+                },
+                error => {
+                    this.showAlert('alertSignup');
+                    this._alertService.error(error);
+                    this.loading = false;
+                });
     }
 
     showAlert(target) {

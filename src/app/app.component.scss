@@ -1,0 +1,49 @@
+flash-messages {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 90px;
+    z-index: 10000;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.m-header--minimize-on flash-messages {
+    top: 60px;
+    transition: all .3s ease .3s;
+}
+
+.m-header--minimize-off flash-messages {
+    transition: all .1s ease .1s;
+    top: 90px;
+}
+
+flash-messages .alert {
+    padding: 5px 20px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+.fixed-alert {
+    position: fixed;
+    top: 10px;
+    left: 40%;
+}
+
+flash-messages .alert .close {
+    top: 90px;
+    right: 0;
+}
+
+.flash-message p {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+        text-align: center !important;
+}
+
+#flashMessages .flash-message{display:none;}
+#flashMessages .flash-message:last-child{display:block;}

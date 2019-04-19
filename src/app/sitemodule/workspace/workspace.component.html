@@ -1,39 +1,32 @@
-<div class="m-container m-nav-top">
-    <div class="row">
-      <div class="col-md-6" style="min-height: 390px;">
-            <div class="m-portlet m-portlet--tab">
-                <div class="m-portlet__head">
-                    <div class="m-portlet__head-caption">
-                    <div class="m-portlet__head-title">
-                        <span class="m-portlet__head-icon m--hide">
-                        <i class="la la-gear"></i>
-                        </span>
-                        <h3 class="m-portlet__head-text">
-                            <span> Sign in to your workspace</span>
-                        </h3>
-                    </div>
-                    </div>
-                </div>
-                <div class="m-portlet__body">
-                    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.form)" class="m-login__form m-form">
-                        <ng-template #alertSignin></ng-template>
-                        <div class="login-form">
-                            <div class="form-group m-form__group">
-                                <div class="input-group">
-                                    <input class="form-input" type="text" placeholder="yoursitename" name="subdomain" [(ngModel)]="model.subdomain"
-                                        id="subdomain" required>
-                                    <span class="input-group-addon" style="height: 32px;"><b>.kumolus.com</b></span>
-                                </div>
-                            </div>
-                            <div class="m-login__form-action">
-                                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading,'m-disabled':loading || !loginForm.form.valid}"
-                                    id="m_login_signin_submit" class="m-btn-form">
-                                    Continue
-                                </button>
+<div class="m-login_signup">
+    <div class="container">
+        <h1 class="punchline"><span>Sign in to your workspace</span></h1>
+        <div class="row">
+            <div class="col-md-6 small-centered">
+                <form class="m-form" #loginForm="ngForm" novalidate>
+                    <div class="form-group m-form__group row">
+                        <label for="subdomain" class="col-2 col-form-label workspace-label">
+                            Yoursitename
+                        </label>
+                        <div class="col-10">
+                            <div class="input-group">
+                                <input class="form-input form-control" type="text" name="subdomain"
+                                    [(ngModel)]="model.subdomain" id="subdomain" required>
+                                <span class="input-group-addon" style="height: 37px;">.kumolus.com</span>
                             </div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-group m-form__group workspace_bottom_space row">
+                        <label class="col-2 col-form-label">
+                        </label>
+                        <div class="col-10">
+                            <button class="btn btn-primary btn-group-sm" type="button" [disabled]="loginForm.invalid"
+                                (click)="onSubmit(loginForm.form)">
+                                Continue
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
