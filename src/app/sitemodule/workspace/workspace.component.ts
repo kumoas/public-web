@@ -36,7 +36,7 @@ export class WorkspaceComponent implements OnInit {
                 localStorage.setItem('allowed_url', response.url);
                 window.location.href = response.url;
             } else {
-                this.flashMessageService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 1000000 });
+                this.flashMessageService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 10000 });
             }
         }, function (error) {
             let errMsg = JSON.parse(error._body);
