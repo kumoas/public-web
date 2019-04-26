@@ -5,7 +5,7 @@ import { AuthenticationService } from "./../_services/authentication.service";
 import { AlertService } from "../_services/alert.service";
 import { AlertComponent } from "../_directives/alert.component";
 import { FlashMessagesService } from 'angular2-flash-messages';
-
+declare var _ : any;
 @Component({
     selector: "kumo-auth-signup",
     templateUrl: './signup.component.html',
@@ -70,8 +70,9 @@ export class SignupComponent implements OnInit {
                     this.model = {};
                 },
                 error => {
-                    this.showAlert('alertSignup');
-                    this._alertService.error(error);
+                    var errors = JSON.parse(error._body);
+                    var err = _.flatten(errors['validation_errors'][0]);
+                    self.flashMessagesService.show(err[0] + ':' + err[1], { cssClass: 'alert-danger', timeout: 2000 });
                     this.loading = false;
                 });
     }

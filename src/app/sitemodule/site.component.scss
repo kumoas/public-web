@@ -75,3 +75,10 @@
 .workspace-label {
   font-weight: bold !important; 
 }
+.btn:disabled {
+  cursor: auto;
+}
+.flash-message p {
+  text-align: center !important;
+  height: 0px !important;
+}
