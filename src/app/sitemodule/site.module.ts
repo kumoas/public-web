@@ -19,10 +19,11 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { AboutComponent } from './about/about.component';
 import { WorkspaceComponent } from './workspace/workspace.component';
 import { SignupComponent } from './signup/signup.component';
-
+import { ConfirmComponent } from './confirm/confirm.component'
 import { AlertService } from "./_services/alert.service";
 import { AuthenticationService } from "./_services/authentication.service";
 import { CoreModule } from '../core/core.module';
+import { from } from 'rxjs/observable/from';
 
 const routes: Routes = [
     {
@@ -80,7 +81,12 @@ const routes: Routes = [
                 "path": "",
                 "redirectTo": "home",
                 "pathMatch": "full"
-            }
+            },
+            {   
+            "path": "confirm",
+            "component": ConfirmComponent,
+            "data": { module: 'Auth' }
+        },
         ],
     }
 ];
@@ -98,7 +104,8 @@ const routes: Routes = [
         PrivacyComponent,
         AboutComponent,
         WorkspaceComponent,
-        SignupComponent
+        SignupComponent,
+        ConfirmComponent
     ],
     imports: [
         CommonModule,
