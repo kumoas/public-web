@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
         "password": '',
         "password_confirmation": '',
         "signup_as": "normal",
-        "_host" : "",
+        "host_" : "",
     };
     loading = false;
     // TODO: Need to remove unconfirmed_email. need to solve error on build
@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
             this._alertService.error('Please enter valid signup details.');
             this.loading = false;
         }
-        self.model._host = window.location.origin;
+        self.model.host_ = window.location.origin;
         this._authService.signup(this.model)
             .subscribe(
                 data => {
