@@ -30,19 +30,23 @@ export class WorkspaceComponent implements OnInit {
     }
 
     onSubmit(form) {
-        let subdomain = this.model.subdomain;
-        this._authService.validateSubdomain(subdomain).then(response => {
+        var self = this;
+        var params = {
+            subdomain : self.model.subdomain,
+            username_or_email: self.model.username_or_email
+        }
+        self._authService.validateSubdomain(params).then(response => {
             if (response.status) {
                 localStorage.setItem('allowed_url', response.url);
                 window.location.href = response.url;
             } else {
-                this.flashMessageService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 10000 });
+                self.flashMessageService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 10000 });
             }
         }, function (error) {
             let errMsg = JSON.parse(error._body);
-            this.flashMessageService.show(errMsg.message, { cssClass: 'alert-danger', timeout: 10000 });
-            this._alertService.error(error.message);
-            this.loading = false;
+            self.flashMessageService.show(errMsg.message, { cssClass: 'alert-danger', timeout: 10000 });
+            self._alertService.error(error.message);
+            self.loading = false;
         });
 
     }
