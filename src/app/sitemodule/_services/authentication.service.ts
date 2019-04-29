@@ -11,7 +11,6 @@ export class AuthenticationService {
     }
 
     validateSubdomain(params){
-        debugger
         if(params.subdomain && params.username_or_email){
             var url = 'private/users/validate_subdomain?subdomain='+params.subdomain+'&username_or_email='+params.username_or_email;
         }
