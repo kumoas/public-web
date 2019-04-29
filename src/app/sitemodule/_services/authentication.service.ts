@@ -11,10 +11,16 @@ export class AuthenticationService {
     }
 
     validateSubdomain(params){
-        if(params.subdomain)
-        var url = 'private/users/validate_subdomain?subdomain='+params.subdomain;
-        else
-        var url = 'private/users/validate_subdomain?username_or_email='+params.username_or_email;
+        debugger
+        if(params.subdomain && params.username_or_email){
+            var url = 'private/users/validate_subdomain?subdomain='+params.subdomain+'&username_or_email='+params.username_or_email;
+        }
+        else{
+            if(params.subdomain)
+            var url = 'private/users/validate_subdomain?subdomain='+params.subdomain;
+            else
+            var url = 'private/users/validate_subdomain?username_or_email='+params.username_or_email;
+        }
         return this.http.get(url)
         .toPromise()
         .then(response => {
