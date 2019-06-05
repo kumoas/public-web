@@ -46,4 +46,16 @@
             </div>
         </div>
     </div>
+    <ng-template #content let-modal let-close="close">
+        <div class="modal-header">
+            <h5 class="modal-title" id="urlModal">Select workspace</h5>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li *ngFor = "let url of returnUrls">
+                    <button class="btn btn-success btn-group-sm" type="button" (click) = "redirect(url)">{{url}}</button>
+                </li>
+            </ul>
+        </div>
+    </ng-template>
 </div>

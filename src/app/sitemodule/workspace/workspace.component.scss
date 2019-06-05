@@ -1,6 +1,28 @@
 .workspace_bottom_space {
-    margin-bottom: 199px !important; 
+  margin-bottom: 199px !important; 
 }
 .workspace-center {
-    text-align: center;
+  text-align: center;
+}
+.modal-body ul{
+  list-style-type: none;
+  text-align: center;
+  padding-left: 0;
+}
+.modal-body button{
+  font-size: 16px;
+  width: 100%;
+}
+
+.modal-body ul li{
+  padding-bottom: 10px;
+}
+
+.modal .modal-content .modal-header .modal-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+.modal-header{
+  display: inline;
+  text-align: center;
 }
