@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
     BrowserModule,
     SiteModule,
     CoreModule,
+    FormsModule,
     AppRoutingModule,
     FlashMessagesModule,
     NgbModule.forRoot()

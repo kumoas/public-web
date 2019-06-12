@@ -26,3 +26,209 @@
   display: inline;
   text-align: center;
 }
+.m-login.m-login--1 .m-login__aside {
+  width: 60%;
+}
+.m-login.m-login--1 .m-login__aside_sso {
+  width: 100%;
+}
+.m-login.m-login--1 .m-login__aside_sso {
+  padding: 2rem 11rem;
+}
+.m-form {
+  background-color: white;
+}
+
+.login-form {
+  padding: 50px;
+}
+
+.m-login.m-login--1 .m-login__wrapper {
+  overflow: hidden;
+  padding: 0% 28px 28px 28px !important;
+}
+
+.m-login.m-login--1 .m-login__wrapper .m-login__form {
+  margin-top: 28px;
+}
+
+.form-input {
+  border: 1px solid #cccccc;
+  margin: 0 0 15px 0;
+  padding: 8px;
+  height: 32px;
+  width: 100%;
+}
+
+.m-btn-form {
+  width: 100%;
+  background-color: #00a3b6;
+  border-color: #0097a9;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+  padding: 6px 15px 6px;
+  cursor: pointer;
+}
+
+.m-login.m-login--1 .m-login__wrapper .m-login__form .m-login__form-action {
+  margin: 0px !important;
+}
+
+.m-account {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.m-login-msg {
+  font-size: 15px;
+}
+
+.m-title {
+  color: #ffffff;
+  font-family: Poppins;
+  font-weight: 600;
+  text-align: center;
+}
+
+.m-footer-size {
+  font-size: 18px
+}
+
+.m-account-msg {
+  text-align: center;
+  margin-top: 63px;
+}
+
+.m-account-footer{
+  text-align: center;
+  margin-top: 165px;
+}
+.m-anchor {
+  cursor: pointer;
+}
+
+@media (max-width: 768px)
+{
+  .m-login.m-login--1 .m-login__aside {
+      width: 100%;
+      padding: 28px 0px;
+  }   
+}
+
+.m-center {
+  margin: 0px auto 0px auto;
+}
+
+.m-color {
+  background-color: #252221 !important;
+}
+
+.m-login__logo {
+  width: 50px
+}
+
+.m-login__logo img {
+  width: 100%;
+}
+
+.m-sinup-link{
+  color: #008cba;
+  text-decoration: none;
+  line-height: inherit;
+}
+.m-login.m-login--1 .m-login__wrapper .m-login__logo {
+  text-align: center;
+  margin: 0 auto 0px auto !important;
+}
+.m-top-login{
+  margin-top: 56px !important;
+}
+.m-top-forgot{
+  margin-top: 70px !important;  
+}
+@media only screen and (max-width: 480px) {
+  .m-top-login {
+      margin-top: 25px !important;
+  }
+  .m-login-title{
+      font-size: 16px;
+  }
+  .m-login-msg{
+      font-size: 14px;
+  }
+  .m-account-footer{
+      margin-top: 120px;
+  }
+  .m-account-msg{
+      margin-top: 0px; 
+  }
+}
+.m-btn-sso {
+  background-color: #00a3b6;
+  border-color: #0097a9;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+  padding: 6px 15px 6px;
+  cursor: pointer;
+}
+.m-sso-header {
+  margin: 0px auto 0px auto;
+}
+.m-account-sso {
+  margin-bottom: 10px;
+}
+.m--sso-title {
+  color: #4d4d4d;
+  font-family: Poppins;
+  font-weight: 600;
+  text-align: center;
+}
+
+.or-spacer-vertical {
+  display: inline-block;
+  margin-top: 0px;
+  margin-left: 40px;
+  width: 100px;
+  position: relative;
+}
+.or-spacer-vertical .mask {
+  overflow: hidden;
+  width: 20px;
+  height: 150px;
+}
+.or-spacer-vertical.left .mask:after {
+  content: '';
+  display: block;
+  margin-left: -20px;
+  width: 20px;
+  height: 100%;
+  border-radius: 12px / 125px;
+  box-shadow: 0 0 8px black;
+}
+.or-spacer-vertical.right .mask:before {
+  content: '';
+  display: block;
+  margin-left: 20px;
+  width: 20px;
+  height: 100%;
+  border-radius: 12px / 125px;
+  box-shadow: 0 0 8px black;
+}
+
+.kspacer {
+  position: relative;
+  top: -15px
+}
+.m-login-page-height {
+  min-height: 100vh;
+}
+.m-forgot-password {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto
+}
+.form-input{
+  border-left: 5px solid #42a948;
+}

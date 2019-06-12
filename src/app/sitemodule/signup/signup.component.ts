@@ -57,6 +57,8 @@ export class SignupComponent implements OnInit {
             this._alertService.error('Please enter valid signup details.');
             this.loading = false;
         }
+        console.log(this.model)
+        debugger
         self.model.host_ = window.location.origin;
         this._authService.signup(this.model)
             .subscribe(

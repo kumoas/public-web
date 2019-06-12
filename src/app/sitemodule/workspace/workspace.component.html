@@ -1,51 +1,36 @@
-<div class="m-login_signup">
-    <div class="container">
-        <h1 class="punchline"><span>Sign in to your workspace</span></h1>
-        <div class="row">
-            <div class="col-md-7 small-centered">
-                <form class="m-form" #loginForm="ngForm" novalidate>
-                    <div class="form-group m-form__group row">
-                        <label for="subdomain" class="col-3 col-form-label workspace-label">
-                            Yoursitename
-                        </label>
-                        <div class="col-9">
-                            <div class="input-group">
-                                <input class="form-input form-control" type="text" name="subdomain"
-                                    [(ngModel)]="model.subdomain" id="subdomain" required>
-                                <span class="input-group-addon" style="height: 37px;">.kumolus.com</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label for="subdomain" class="col-12 col-form-label workspace-label workspace-center">
-                            OR
-                        </label>
-                    </div>
-                    <div class="form-group m-form__group row">
-                        <label for="subdomain" class="col-3 col-form-label workspace-label">
-                            Username / Email 
-                        </label>
-                        <div class="col-9">
-                            <div class="input-group">
-                                <input class="form-input form-control" type="text" name="username_or_email"
-                                    [(ngModel)]="model.username_or_email" id="username_or_email" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group m-form__group workspace_bottom_space row">
-                        <label class="col-3 col-form-label">
-                        </label>
-                        <div class="col-9" >
-                            <button class="btn btn-primary btn-group-sm" type="button" [disabled]="!(model.username_or_email || model.subdomain)"
-                                (click)="onSubmit(loginForm.form)">
-                                Continue
-                            </button>
-                        </div>
-                    </div>
-                </form>
+<div class="m-login__signin">
+    <div class="m-login__head m-top-login ">
+        <h3 class="m-title m-login-title">
+            <span> Sign in to your workspace</span>
+        </h3>
+    </div>
+    <form class="m-login__form m-form" #loginForm="ngForm" novalidate>
+        <div class="login-form">
+            <div class="form-group m-form__group row">
+                <div class="input-group">
+                    <input class="form-input" placeholder="Enter Yoursitename" type="text" name="subdomain"
+                        [(ngModel)]="model.subdomain"  required>
+                    <span class="input-group-addon" style="height: 32px;">.kumolus.com</span>
+                </div>
+            </div>
+            <div class="row">
+                <label for="subdomain" class="col-12 col-form-label workspace-label workspace-center">
+                    OR
+                </label>
+            </div>
+            <div class="form-group m-form__group row">
+                <input class="form-input" type="text"  placeholder="Enter  Username / Email" name="username_or_email"
+                    [(ngModel)]="model.username_or_email" id="username_or_email" required>
+            </div>
+            
+            <div class="m-login__form-action">
+                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="m-btn-form" id="m_login_signin_submit"  type="button" [disabled]="!(model.username_or_email || model.subdomain)"
+                    (click)="onSubmit(loginForm.form)">
+                    Continue
+                </button>
             </div>
         </div>
-    </div>
+    </form>
     <ng-template #content let-modal let-close="close">
         <div class="modal-header">
             <h5 class="modal-title" id="urlModal">Select workspace</h5>
@@ -59,3 +44,4 @@
         </div>
     </ng-template>
 </div>
+

@@ -1,142 +1,107 @@
-<div class="m-login_signup">
-	<div class="container">
-		<h1 class="punchline"><span>Sign up for an account</span></h1>
-		<div class="row">
-			<div class="col-md-6 small-centered">
-				<form class="m-form" #signupForm="ngForm" novalidate>
-					<ng-container *ngIf="!inviteToken">
-						<div class="form-group m-form__group row">
-							<label for="example-text-input" class="col-2 col-form-label workspace-label">
-								Yoursitename
-							</label>
-							<div class="col-10">
-								<div class="input-group">
-									<input class="form-input form-control" type="text" name="subdomain"
-										[(ngModel)]="model.subdomain" id="subdomain" required>
-									<span class="input-group-addon" style="height: 37px;">.kumolus.com</span>
-								</div>
-							</div>
-						</div>
-						<div class="form-group m-form__group row">
-							<label for="unconfirmed_email" class="col-2 col-form-label workspace-label">
-								Email
-							</label>
-							<div class="col-10"
-								[ngClass]="{'has-danger': unconfirmed_email.invalid && unconfirmed_email.dirty, 'has-success': unconfirmed_email.valid }">
-								<input class="form-control m-input" type="email" name="unconfirmed_email" email="true"
-									[pattern]="emailPattern" [(ngModel)]="model.unconfirmed_email"
-									#unconfirmed_email="ngModel" id="unconfirmed_email" required>
-								<div [hidden]="unconfirmed_email.valid || unconfirmed_email.pristine"
-									*ngIf="unconfirmed_email.invalid && (unconfirmed_email.dirty || unconfirmed_email.touched)"
-									class="form-control-feedback">
-									<div *ngIf="unconfirmed_email.errors.required">
-										Please enter the email id.
-									</div>
-									<div *ngIf="unconfirmed_email.errors.pattern">
-										Please enter the correct email id.
-									</div>
-								</div>
-							</div>
-						</div>
-					</ng-container>
-					<div class="form-group m-form__group row">
-						<label for="username" class="col-2 col-form-label workspace-label">
-							Username
-						</label>
-						<div class="col-10"
-							[ngClass]="{'has-danger': username.invalid && username.dirty, 'has-success': username.valid }">
-							<input class="form-control m-input" type="text" name="username" [(ngModel)]="model.username"
-								#username="ngModel" minlength="3" maxlength="30" id="username" required>
-							<div [hidden]="username.valid || username.pristine"
-								*ngIf="username && username.invalid && (username.dirty || username.touched)"
-								class="form-control-feedback">
-								<div *ngIf="username.errors.required">
-									Please enter the username.
-								</div>
-								<div *ngIf="username.errors.minlength">
-									Username must be at least 3 characters long.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="form-group m-form__group row">
-						<label for="password" class="col-2 col-form-label workspace-label">
-							Password
-						</label>
-						<div class="col-10"
-							[ngClass]="{'has-danger': password.invalid && password.dirty, 'has-success': password.valid }">
-							<input class="form-control m-input" type="password" name="password"
-								[(ngModel)]="model.password" #password="ngModel" minlength="8" maxlength="40"
-								id="password" required>
-							<div [hidden]="password.valid || password.pristine"
-								*ngIf="password.invalid && (password.dirty || password.touched)"
-								class="form-control-feedback">
-								<div *ngIf="password.errors.required">
-									Please enter the password.
-								</div>
-								<div *ngIf="password.errors.minlength">
-									Password must be at least 8 characters long.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="form-group m-form__group row">
-						<label for="password_confirmation" class="col-2 col-form-label workspace-label">
-							Confirm Password
-						</label>
-						<div class="col-10"
-							[ngClass]="{'has-danger': password_confirmation.invalid && password_confirmation.dirty, 'has-success': password_confirmation.valid }">
-							<input class="form-control m-input" type="password" name="password_confirmation"
-								[(ngModel)]="model.password_confirmation" #password_confirmation="ngModel"
-								validateEqual="password" minlength="8" id="password_confirmation" required>
-							<div [hidden]="password_confirmation.valid || password_confirmation.pristine"
-								*ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)"
-								class="form-control-feedback">
-								<div *ngIf="password_confirmation.errors.required">
-									please enter confirm password.
-								</div>
-								<div *ngIf="password_confirmation.errors.minlength">
-									This should match with password.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="form-group m-form__group row">
-						<label class="col-2 col-form-label">
-						</label>
-						<div class="col-10">
-							<label class="m-checkbox m-checkbox--focus">
-								<input type="checkbox" class="form-control m-input" name="agree"
-									[(ngModel)]="model.agree" #agree="ngModel" required> I agree to the
-								<a href="https://kumolus.com/terms-conditions"
-									class="m-link m-link--focus m-sinup-link">
-									Kumolus terms of service.
-								</a>
-								<span></span>
-							</label>
-							<span class="m-form__help"></span>
-							<div *ngIf="agree.invalid && (agree.dirty || agree.touched)" class="form-control-feedback">
-								<div *ngIf="agree.errors.required">
-									Please accept the terms of service to proceed.
-								</div>
-							</div>
-							<div class="mandatory-note">
-								Note: All fields are mandatory.
-							</div>
-						</div>
-					</div>
-					<div class="form-group m-form__group btn_bottom_space row">
-						<label class="col-2 col-form-label">
-						</label>
-						<div class="col-10">
-							<button class="btn btn-primary" type="button" [disabled]="signupForm.invalid"
-								(click)="onSubmit(signupForm.form)">
-								Sign Up
-							</button>
-						</div>
-					</div>
-				</form>
-			</div>
+<div class="m-login__signin">
+		<div class="m-login__head m-top-login ">
+			<h3 class="m-title m-login-title">
+				<span> Sign up for an account </span>
+			</h3>
 		</div>
+		<form class="m-login__form m-form" #signupForm="ngForm" novalidate>
+			<div class="login-form">
+				<ng-container *ngIf="!inviteToken">
+					<div class="form-group m-form__group row">
+						<div class="input-group">
+							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
+								[(ngModel)]="model.subdomain" id="subdomain" required>
+							<span class="input-group-addon" style="height: 32px;">.kumolus.com</span>
+						</div>
+					</div>
+					<div class="form-group m-form__group row" [ngClass]="{'has-danger': unconfirmed_email.invalid && unconfirmed_email.dirty, 'has-success': unconfirmed_email.valid }">
+						<input class="form-input" type="email" placeholder="Enter email" name="unconfirmed_email" email="true"
+							[pattern]="emailPattern" [(ngModel)]="model.unconfirmed_email"
+							#unconfirmed_email="ngModel" id="unconfirmed_email" required>
+						<div [hidden]="unconfirmed_email.valid || unconfirmed_email.pristine"
+							*ngIf="unconfirmed_email.invalid && (unconfirmed_email.dirty || unconfirmed_email.touched)"
+							class="form-control-feedback">
+							<div *ngIf="unconfirmed_email.errors.required">
+								Please enter the email id.
+							</div>
+							<div *ngIf="unconfirmed_email.errors.pattern">
+								Please enter the correct email id.
+							</div>
+						</div>
+					</div>
+				</ng-container>
+				<div class="form-group m-form__group row" [ngClass]="{'has-danger': username.invalid && username.dirty, 'has-success': username.valid }">
+						<input class="form-input" type="text" placeholder="Enter Username" name="username" [(ngModel)]="model.username"
+							#username="ngModel" minlength="3" maxlength="30" id="username" required>
+						<div [hidden]="username.valid || username.pristine"
+							*ngIf="username && username.invalid && (username.dirty || username.touched)"
+							class="form-control-feedback">
+							<div *ngIf="username.errors.required">
+								Please enter the username.
+							</div>
+							<div *ngIf="username.errors.minlength">
+								Username must be at least 3 characters long.
+							</div>
+						</div>
+				</div>
+				<div class="form-group m-form__group row" [ngClass]="{'has-danger': password.invalid && password.dirty, 'has-success': password.valid }">
+					<input class="form-input" type="password" placeholder="Enter password" name="password"
+						[(ngModel)]="model.password" #password="ngModel" minlength="8" maxlength="40"
+						id="password" required>
+					<div [hidden]="password.valid || password.pristine"
+						*ngIf="password.invalid && (password.dirty || password.touched)"
+						class="form-control-feedback">
+						<div *ngIf="password.errors.required">
+							Please enter the password.
+						</div>
+						<div *ngIf="password.errors.minlength">
+							Password must be at least 8 characters long.
+						</div>
+					</div>
+				</div>
+				<div class="form-group m-form__group row" [ngClass]="{'has-danger': password_confirmation.invalid && password_confirmation.dirty, 'has-success': password_confirmation.valid }">
+					<input class="form-input" type="password" placeholder="Enter confirm password" name="password_confirmation"
+						[(ngModel)]="model.password_confirmation" #password_confirmation="ngModel"
+						validateEqual="password" minlength="8" id="password_confirmation" required>
+					<div [hidden]="password_confirmation.valid || password_confirmation.pristine"
+						*ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)"
+						class="form-control-feedback">
+						<div *ngIf="password_confirmation.errors.required">
+							please enter confirm password.
+						</div>
+						<div *ngIf="password_confirmation.errors.minlength">
+							This should match with password.
+						</div>
+					</div>
+				</div>
+				<div class="form-group m-form__group row">
+					<label class="m-checkbox m-checkbox--focus">
+						<input type="checkbox" class="form-input" name="agree"
+							[(ngModel)]="model.agree" #agree="ngModel" required> I agree to the
+						<a href="https://kumolus.com/terms-conditions"
+							class="m-link m-link--focus m-sinup-link">
+							Kumolus terms of service.
+						</a>
+						<span></span>
+					</label>
+					<span class="m-form__help"></span>
+					<div *ngIf="agree.invalid && (agree.dirty || agree.touched)" class="form-control-feedback">
+						<div *ngIf="agree.errors.required">
+							Please accept the terms of service to proceed.
+						</div>
+					</div>
+					<div class="mandatory-note">
+						Note: All fields are mandatory.
+					</div>
+				</div>
+				<div class="m-login__form-action">
+					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid"
+						(click)="onSubmit(signupForm.form)">
+						Sign Up
+					</button>
+				</div>
+			</div>
+		</form>
 	</div>
-</div>
+	
+	
