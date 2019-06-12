@@ -31,7 +31,8 @@ export class SignupComponent implements OnInit {
     inviteToken: any = '';
     signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
+    errorMessageClosed: boolean = true;
+    errorMessage: string = '';
     @ViewChild('alertSignup', { read: ViewContainerRef }) alertSignup: ViewContainerRef;
 
     constructor(private _router: Router,
@@ -57,13 +58,11 @@ export class SignupComponent implements OnInit {
             this._alertService.error('Please enter valid signup details.');
             this.loading = false;
         }
-        console.log(this.model)
-        debugger
         self.model.host_ = window.location.origin;
         this._authService.signup(this.model)
             .subscribe(
                 data => {
-
+                    this.errorMessageClosed = true;
                     this.loading = false;
                     this._router.navigate(['/workspace']);
                     if (self.model.invite_token) {
@@ -76,7 +75,8 @@ export class SignupComponent implements OnInit {
                 error => {
                     var errors = JSON.parse(error._body);
                     var err = _.flatten(errors['validation_errors'][0]);
-                    self.flashMessagesService.show(err[0] + ':' + err[1], { cssClass: 'alert-danger', timeout: 2000 });
+                    this.errorMessageClosed = false;
+                    this.errorMessage = err[0] + ' ' + err[1];
                     this.loading = false;
                 });
     }

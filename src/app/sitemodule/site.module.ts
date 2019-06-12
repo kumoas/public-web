@@ -30,45 +30,49 @@ const routes: Routes = [
         "path": "",
         "component": SiteComponent,
         "children": [
+            // { 
+            //     "path": "",
+            //     "component": HomeComponent,
+            // },
+            // { 
+            //     "path": "home", 
+            //     "component": HomeComponent,
+            // },
+            // { 
+            //     "path": "features", 
+            //     "component": FeatureComponent,
+            // },
+            // { 
+            //     "path": "solution/:type", 
+            //     "component": SolutionsComponent,
+            // },
+            // { 
+            //     "path": "solution", 
+            //     "component": SolutionsComponent,
+            // },
+            // { 
+            //     "path": "partners", 
+            //     "component": PartnersComponent,
+            // },
+            // { 
+            //     "path": "pricing", 
+            //     "component": PricingComponent,
+            // },
+            // { 
+            //     "path": "terms", 
+            //     "component": TermsComponent,
+            // },
+            // {
+            //     "path": "privacy", 
+            //     "component": PrivacyComponent,  
+            // },
+            // {
+            //     "path": "aboutus", 
+            //     "component": AboutComponent,  
+            // },
             { 
                 "path": "",
-                "component": HomeComponent,
-            },
-            { 
-                "path": "home", 
-                "component": HomeComponent,
-            },
-            { 
-                "path": "features", 
-                "component": FeatureComponent,
-            },
-            { 
-                "path": "solution/:type", 
-                "component": SolutionsComponent,
-            },
-            { 
-                "path": "solution", 
-                "component": SolutionsComponent,
-            },
-            { 
-                "path": "partners", 
-                "component": PartnersComponent,
-            },
-            { 
-                "path": "pricing", 
-                "component": PricingComponent,
-            },
-            { 
-                "path": "terms", 
-                "component": TermsComponent,
-            },
-            {
-                "path": "privacy", 
-                "component": PrivacyComponent,  
-            },
-            {
-                "path": "aboutus", 
-                "component": AboutComponent,  
+                "component": WorkspaceComponent,
             },
             {
                 "path": "workspace",
@@ -79,14 +83,14 @@ const routes: Routes = [
             },
             {
                 "path": "",
-                "redirectTo": "home",
+                "redirectTo": "workspace",
                 "pathMatch": "full"
             },
             {   
             "path": "confirm",
             "component": ConfirmComponent,
             "data": { module: 'Auth' }
-        },
+            },
         ],
     }
 ];

@@ -5,6 +5,11 @@
 			</h3>
 		</div>
 		<form class="m-login__form m-form" #signupForm="ngForm" novalidate>
+			<p>
+				<ngb-alert *ngIf="!errorMessageClosed" [type]="'danger'" (close)="errorMessageClosed = true">
+					{{errorMessage}}
+				</ngb-alert>
+			</p>
 			<div class="login-form">
 				<ng-container *ngIf="!inviteToken">
 					<div class="form-group m-form__group row">
@@ -70,8 +75,11 @@
 							please enter confirm password.
 						</div>
 						<div *ngIf="password_confirmation.errors.minlength">
-							This should match with password.
+							Password must be at least 8 characters long.
 						</div>
+					</div>
+					<div *ngIf="(model.password != model.password_confirmation) && (password_confirmation.dirty || password_confirmation.touched)" class="form-control-feedback" style="color: #f4516c">
+						This should match with password.
 					</div>
 				</div>
 				<div class="form-group m-form__group row">
@@ -95,7 +103,7 @@
 					</div>
 				</div>
 				<div class="m-login__form-action">
-					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid"
+					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid || model.password != model.password_confirmation" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation}"
 						(click)="onSubmit(signupForm.form)">
 						Sign Up
 					</button>

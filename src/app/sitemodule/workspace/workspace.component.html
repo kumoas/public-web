@@ -6,6 +6,11 @@
     </div>
     <form class="m-login__form m-form" #loginForm="ngForm" novalidate>
         <div class="login-form">
+            <p>
+                <ngb-alert *ngIf="!errorMessageClosed" [type]="'danger'" (close)="errorMessageClosed = true">
+                    {{errorMessage}}
+                </ngb-alert>
+            </p>
             <div class="form-group m-form__group row">
                 <div class="input-group">
                     <input class="form-input" placeholder="Enter Yoursitename" type="text" name="subdomain"
@@ -24,7 +29,7 @@
             </div>
             
             <div class="m-login__form-action">
-                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading}" class="m-btn-form" id="m_login_signin_submit"  type="button" [disabled]="!(model.username_or_email || model.subdomain)"
+                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled': !(model.username_or_email || model.subdomain)}" class="m-btn-form" id="m_login_signin_submit"  type="button" [disabled]="!(model.username_or_email || model.subdomain)"
                     (click)="onSubmit(loginForm.form)">
                     Continue
                 </button>
@@ -33,6 +38,9 @@
     </form>
     <ng-template #content let-modal let-close="close">
         <div class="modal-header">
+            <button type="button" class="close anchor-span" aria-label="Close" (click)="close('Cross click')" style="cursor: pointer">
+                <span aria-hidden="true">&times;</span>
+            </button>
             <h5 class="modal-title" id="urlModal">Select workspace</h5>
         </div>
         <div class="modal-body">

@@ -16,6 +16,8 @@ export class WorkspaceComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrls: any = [];
+    errorMessageClosed: boolean = true;
+    errorMessage: string = '';
 
     @ViewChild('alertSignin', { read: ViewContainerRef }) alertSignin: ViewContainerRef;
     @ViewChild('content') content: ElementRef;
@@ -39,6 +41,7 @@ export class WorkspaceComponent implements OnInit {
         }
         self._authService.validateSubdomain(params).then(response => {
             if (response.status) {
+                this.errorMessageClosed = true;
                 localStorage.setItem('allowed_url', response.url);
                 if(response.url.length > 1){
                     this.returnUrls = response.url
@@ -48,11 +51,13 @@ export class WorkspaceComponent implements OnInit {
                     window.location.href = response.url[0];
                 }
             } else {
-                self.flashMessageService.show("Workspace doesn't exist", { cssClass: 'alert-danger', timeout: 10000 });
+                this.errorMessageClosed = false;
+                this.errorMessage = "Workspace doesn't exist";
             }
         }, function (error) {
             let errMsg = JSON.parse(error._body);
-            self.flashMessageService.show(errMsg.message, { cssClass: 'alert-danger', timeout: 10000 });
+            this.errorMessageClosed = false;
+            this.errorMessage = errMsg;
             self._alertService.error(error.message);
             self.loading = false;
         });
