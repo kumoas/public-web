@@ -38,7 +38,7 @@ export class ConfirmComponent implements OnInit {
                     error => {
                         self._router.navigate(['workspace']);
                         // The link has been disabled as its been already used.
-                        self.flashMessagesService.show(error, { cssClass: 'alert-danger', timeout: 10000 })
+                        self.flashMessagesService.show(JSON.parse(error._body).error_code, { cssClass: 'alert-danger', timeout: 10000 })
                         self.user = {};
                     });
         } else {
