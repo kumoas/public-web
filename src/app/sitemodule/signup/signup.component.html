@@ -68,18 +68,8 @@
 					<input class="form-input" type="password" placeholder="Enter confirm password" name="password_confirmation"
 						[(ngModel)]="model.password_confirmation" #password_confirmation="ngModel"
 						validateEqual="password" minlength="8" id="password_confirmation" required>
-					<div [hidden]="password_confirmation.valid || password_confirmation.pristine"
-						*ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)"
-						class="form-control-feedback">
-						<div *ngIf="password_confirmation.errors.required">
-							please enter confirm password.
-						</div>
-						<div *ngIf="password_confirmation.errors.minlength">
-							Password must be at least 8 characters long.
-						</div>
-					</div>
-					<div *ngIf="(model.password != model.password_confirmation) && (password_confirmation.dirty || password_confirmation.touched)" class="form-control-feedback" style="color: #f4516c">
-						This should match with password.
+					<div [hidden]="password_confirmation.valid || password_confirmation.pristine" class="form-control-feedback">
+						Password mismatch
 					</div>
 				</div>
 				<div class="form-group m-form__group row">
