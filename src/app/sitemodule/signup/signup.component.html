@@ -51,7 +51,7 @@
 				</div>
 				<div class="form-group m-form__group row" [ngClass]="{'has-danger': password.invalid && password.dirty, 'has-success': password.valid }">
 					<input class="form-input" type="password" placeholder="Enter password" name="password"
-						[(ngModel)]="model.password" #password="ngModel" minlength="8" maxlength="40"
+						[(ngModel)]="model.password"  #password="ngModel" minlength="8" maxlength="40"
 						id="password" required>
 					<div [hidden]="password.valid || password.pristine"
 						*ngIf="password.invalid && (password.dirty || password.touched)"
@@ -67,8 +67,8 @@
 				<div class="form-group m-form__group row" [ngClass]="{'has-danger': password_confirmation.invalid && password_confirmation.dirty, 'has-success': password_confirmation.valid }">
 					<input class="form-input" type="password" placeholder="Enter confirm password" name="password_confirmation"
 						[(ngModel)]="model.password_confirmation" #password_confirmation="ngModel"
-						validateEqual="password" minlength="8" id="password_confirmation" required>
-					<div [hidden]="password_confirmation.valid || password_confirmation.pristine" class="form-control-feedback">
+						minlength="8" id="password_confirmation" required>
+					<div [hidden]="(model.password ==model.password_confirmation)  || password_confirmation.pristine" class="form-control-feedback" style="color:#f4516c;">
 						Password mismatch
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 				<div class="m-login__form-action">
-					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid || model.password != model.password_confirmation" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation}"
+					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
 						(click)="onSubmit(signupForm.form)">
 						Sign Up
 					</button>
