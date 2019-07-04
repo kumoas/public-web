@@ -23,7 +23,6 @@ import { ConfirmComponent } from './confirm/confirm.component'
 import { AlertService } from "./_services/alert.service";
 import { AuthenticationService } from "./_services/authentication.service";
 import { CoreModule } from '../core/core.module';
-import { EqualValidator } from './signup/equal-validator.directive';
 import { from } from 'rxjs/observable/from';
 
 const routes: Routes = [
@@ -31,46 +30,6 @@ const routes: Routes = [
         "path": "",
         "component": SiteComponent,
         "children": [
-            // { 
-            //     "path": "",
-            //     "component": HomeComponent,
-            // },
-            // { 
-            //     "path": "home", 
-            //     "component": HomeComponent,
-            // },
-            // { 
-            //     "path": "features", 
-            //     "component": FeatureComponent,
-            // },
-            // { 
-            //     "path": "solution/:type", 
-            //     "component": SolutionsComponent,
-            // },
-            // { 
-            //     "path": "solution", 
-            //     "component": SolutionsComponent,
-            // },
-            // { 
-            //     "path": "partners", 
-            //     "component": PartnersComponent,
-            // },
-            // { 
-            //     "path": "pricing", 
-            //     "component": PricingComponent,
-            // },
-            // { 
-            //     "path": "terms", 
-            //     "component": TermsComponent,
-            // },
-            // {
-            //     "path": "privacy", 
-            //     "component": PrivacyComponent,  
-            // },
-            // {
-            //     "path": "aboutus", 
-            //     "component": AboutComponent,  
-            // },
             { 
                 "path": "",
                 "component": WorkspaceComponent,
@@ -84,6 +43,16 @@ const routes: Routes = [
             },
             {
                 "path": "",
+                "redirectTo": "workspace",
+                "pathMatch": "full"
+            },
+            {
+                "path": "auth/signup",
+                "redirectTo": "signup",
+                "pathMatch": "full"
+            },
+            {
+                "path": "auth/login",
                 "redirectTo": "workspace",
                 "pathMatch": "full"
             },
@@ -110,8 +79,7 @@ const routes: Routes = [
         AboutComponent,
         WorkspaceComponent,
         SignupComponent,
-        ConfirmComponent,
-        EqualValidator
+        ConfirmComponent
     ],
     imports: [
         CommonModule,

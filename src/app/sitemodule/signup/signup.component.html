@@ -16,7 +16,7 @@
 						<div class="input-group">
 							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
 								[(ngModel)]="model.subdomain" id="subdomain" required>
-							<span class="input-group-addon" style="height: 32px;">.kumolus.net</span>
+							<span class="input-group-addon site-name">.kumolus.net</span>
 						</div>
 					</div>
 					<div class="form-group m-form__group row" [ngClass]="{'has-danger': unconfirmed_email.invalid && unconfirmed_email.dirty, 'has-success': unconfirmed_email.valid }">
@@ -93,7 +93,7 @@
 					</div>
 				</div>
 				<div class="m-login__form-action">
-					<button class="m-btn-form" type="button" [disabled]="signupForm.invalid" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
+					<button class="m-btn-form" type="submit" [disabled]="signupForm.invalid" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
 						(click)="onSubmit(signupForm.form)">
 						Sign Up
 					</button>

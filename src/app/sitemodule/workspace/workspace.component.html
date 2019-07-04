@@ -29,7 +29,7 @@
             </div>
             
             <div class="m-login__form-action">
-                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled': !(model.username_or_email || model.subdomain)}" class="m-btn-form" id="m_login_signin_submit"  type="button" [disabled]="!(model.username_or_email || model.subdomain)"
+                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled': !(model.username_or_email || model.subdomain)}" class="m-btn-form" id="m_login_signin_submit"  type="submit" [disabled]="!(model.username_or_email || model.subdomain)"
                     (click)="onSubmit(loginForm.form)">
                     Continue
                 </button>
