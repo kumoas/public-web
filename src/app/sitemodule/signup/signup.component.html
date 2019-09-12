@@ -15,7 +15,7 @@
 					<div class="form-group m-form__group row">
 						<div class="input-group">
 							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
-								[(ngModel)]="model.subdomain" id="subdomain" required>
+								[(ngModel)]="model.subdomain" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" required>
 							<span class="input-group-addon site-name">.kumolus.net</span>
 						</div>
 					</div>
