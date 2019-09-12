@@ -1,3 +1,29 @@
+.login-form{
+  padding: 18px 50px;
+}
 .submit-disabled{
   background-color: #b4d0d4;
+}
+.signup_success_title{
+  font-size: 1.33rem;
+  color: green;
+  font-weight: 500;
+}
+.signup_success_close{
+  margin: auto; 
+  cursor: pointer;
+  color: #277b27;
+}
+.signup_success_msg{
+  border-bottom: 1px solid #222;
+  margin-bottom: 18px !important;
+} 
+.signup_success_msg > p {
+  color: green;
+  margin: 0 12px ;
+}
+.x {
+  position: absolute;
+  top: -15px;
+  right: -18px;
 }

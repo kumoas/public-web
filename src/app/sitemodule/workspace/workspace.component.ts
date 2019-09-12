@@ -1,10 +1,11 @@
 import { Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef, ViewEncapsulation, ElementRef } from "@angular/core";
-import { ActivatedRoute, Router } from "@angular/router";
+import { ActivatedRoute, Router, Params } from "@angular/router";
 
 import { AuthenticationService } from "../_services/authentication.service";
 import { AlertService } from "../_services/alert.service";
 import { FlashMessagesService } from 'angular2-flash-messages';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from "rxjs";
 @Component({
     selector: "kumo-site-workspace",
     templateUrl: './workspace.component.html',
@@ -16,6 +17,7 @@ export class WorkspaceComponent implements OnInit {
     model: any = {};
     loading = false;
     returnUrls: any = [];
+    isSignupSuccessMsg: boolean = false;
     errorMessageClosed: boolean = true;
     errorMessage: string = '';
 
@@ -31,8 +33,14 @@ export class WorkspaceComponent implements OnInit {
     }
 
     ngOnInit() {
+        let successSignup = this._route.snapshot.queryParams["isSignupSuccess"];
+        if(successSignup == 'true'){
+          this.isSignupSuccessMsg = true;
+        } else{
+          this.isSignupSuccessMsg = false;
+        } 
     }
-
+    
     onSubmit(form) {
         var self = this;
         var params = {
@@ -74,6 +82,9 @@ export class WorkspaceComponent implements OnInit {
 
     redirect(url){
         window.location.href = url;
+    }
+    closeMsg(){
+        this.isSignupSuccessMsg = false;
     }
 
 }

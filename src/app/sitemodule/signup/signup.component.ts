@@ -64,12 +64,10 @@ export class SignupComponent implements OnInit {
                 data => {
                     this.errorMessageClosed = true;
                     this.loading = false;
-                    this._router.navigate(['/workspace']);
+                    this._router.navigate(['/workspace'],{ queryParams: { isSignupSuccess: true } });
                     if (self.model.invite_token) {
                         this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
-                    } else {
-                        this.flashMessagesService.show('Thanks for signing up to Kumolus. You will receive an email, please click the link on the email to confirm your registration.', { cssClass: 'alert-success', timeout: 2000 })
-                    }
+                    } 
                     this.model = {};
                 },
                 error => {
