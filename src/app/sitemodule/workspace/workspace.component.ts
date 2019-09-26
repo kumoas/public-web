@@ -33,8 +33,8 @@ export class WorkspaceComponent implements OnInit {
     }
 
     ngOnInit() {
-        let successSignup = this._route.snapshot.queryParams["isSignupSuccess"];
-        if(successSignup == 'true'){
+        // let successSignup = localStorage.getItem('isSignupSuccess');
+        if(localStorage.getItem('isSignupSuccess') == 'true'){
           this.isSignupSuccessMsg = true;
         } else{
           this.isSignupSuccessMsg = false;
@@ -85,6 +85,7 @@ export class WorkspaceComponent implements OnInit {
     }
     closeMsg(){
         this.isSignupSuccessMsg = false;
+        localStorage.removeItem('isSignupSuccess');
     }
 
 }

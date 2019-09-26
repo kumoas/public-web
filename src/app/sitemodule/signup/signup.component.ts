@@ -64,10 +64,10 @@ export class SignupComponent implements OnInit {
                 data => {
                     this.errorMessageClosed = true;
                     this.loading = false;
-                    this._router.navigate(['/workspace'],{ queryParams: { isSignupSuccess: true } });
-                    if (self.model.invite_token) {
-                        this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
-                    } 
+                    // if (self.model.invite_token) {
+                    //     this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
+                    // } 
+                    localStorage.setItem('isSignupSuccess', 'true');
                     this.model = {};
                 },
                 error => {
@@ -78,7 +78,7 @@ export class SignupComponent implements OnInit {
                     this.loading = false;
                 });
     }
-
+    
     showAlert(target) {
         this[target].clear();
         let factory = this.cfr.resolveComponentFactory(AlertComponent);
