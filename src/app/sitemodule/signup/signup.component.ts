@@ -74,11 +74,14 @@ export class SignupComponent implements OnInit {
                     var errors = JSON.parse(error._body);
                     var err = _.flatten(errors['validation_errors'][0]);
                     this.errorMessageClosed = false;
-                    this.errorMessage = err[0] + ' ' + err[1];
+                    this.errorMessage = this.jsUcfirst(err[0]) + ' ' + err[1];
                     this.loading = false;
                 });
     }
-    
+    jsUcfirst(string){
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     showAlert(target) {
         this[target].clear();
         let factory = this.cfr.resolveComponentFactory(AlertComponent);
