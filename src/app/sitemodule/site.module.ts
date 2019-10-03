@@ -22,6 +22,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ConfirmComponent } from './confirm/confirm.component'
 import { AlertService } from "./_services/alert.service";
 import { AuthenticationService } from "./_services/authentication.service";
+import { SaasSubscriptionComponent } from './saas-subscription/saas-subscription.component';
 import { CoreModule } from '../core/core.module';
 import { from } from 'rxjs/observable/from';
 
@@ -45,6 +46,10 @@ const routes: Routes = [
                 "path": "",
                 "redirectTo": "workspace",
                 "pathMatch": "full"
+            },
+            {   
+                "path": "saas_subscription",
+                "component": SaasSubscriptionComponent,
             },
             {
                 "path": "auth/signup",
@@ -79,7 +84,8 @@ const routes: Routes = [
         AboutComponent,
         WorkspaceComponent,
         SignupComponent,
-        ConfirmComponent
+        ConfirmComponent,
+        SaasSubscriptionComponent
     ],
     imports: [
         CommonModule,
