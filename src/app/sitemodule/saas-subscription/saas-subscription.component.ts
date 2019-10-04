@@ -21,7 +21,9 @@ export class SaasSubscriptionComponent implements OnInit {
         self.cookieService.put('registrationToken', registrationToken );
         var subdomain = self.cookieService.get('subdomain');
         if(subdomain){
-            var url = subdomain + '.' + window.location.host;
+            var url = window.location.host;
+            var environment = url.split(".")[0];
+            url.replace(environment,subdomain);
             self.cookieService.remove('subdomain');
             window.location.href = url;
         }
