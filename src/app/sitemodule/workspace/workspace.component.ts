@@ -39,6 +39,7 @@ export class WorkspaceComponent implements OnInit {
         } else{
           this.isSignupSuccessMsg = false;
         } 
+        document.cookie = "type=testing";
     }
     
     onSubmit(form) {
