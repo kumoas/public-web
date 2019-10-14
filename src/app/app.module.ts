@@ -9,7 +9,6 @@ import { SiteModule } from "./sitemodule/site.module";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {CoreModule} from './core/core.module';
 import { FlashMessagesModule } from 'angular2-flash-messages';
-import { CookieService } from 'angular2-cookie/services/cookies.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +22,7 @@ import { CookieService } from 'angular2-cookie/services/cookies.service';
     FlashMessagesModule,
     NgbModule.forRoot()
   ],
-  providers: [CookieService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
