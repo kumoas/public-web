@@ -16,22 +16,12 @@ export class SaasSubscriptionComponent implements OnInit {
     ngOnInit() {
         var self = this;
         var registrationToken = self._route.snapshot.queryParams["registration_token"];
-        var str = window.location.hostname;
-        var domain = str.split(".", 1);
-        var domainName = str.replace(domain[0] + '.',"");
-        if(domainName == 'kumolus.com')
-           document.cookie = "registrationToken=" + registrationToken + ";domain=" + 'kumolus.net';
-       else
+        var domainName = window.location.hostname;
         document.cookie = "registrationToken=" + registrationToken + ";domain=" + domainName;
-
         var subdomain = self.getCookie('subdomain');
         if(subdomain){
             var url = window.location.host;
-            var environment = url.split(".")[0];
-            var extensions = url.split(".")[2];
-            url = url.replace(environment,subdomain);
-            if(extensions == 'com')
-                url = url.replace(extensions,'net');
+            url = subdomain + "." + url;
             self.deleteCookie('subdomain');
             window.location.href = url;
         }
