@@ -45,6 +45,7 @@ export class SaasSubscriptionComponent implements OnInit {
         return "";
       }
        deleteCookie(name) {
-        document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        var domainName = window.location.hostname;
+        document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=."+ domainName;
     };
 }
