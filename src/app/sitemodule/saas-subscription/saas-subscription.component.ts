@@ -21,7 +21,7 @@ export class SaasSubscriptionComponent implements OnInit {
         var subdomain = self.getCookie('subdomain');
         if(subdomain){
             var url = window.location.host;
-            url = subdomain + "." + url;
+            url = 'https://'+ subdomain + "." + url;
             self.deleteCookie('subdomain');
             window.location.href = url;
         }
