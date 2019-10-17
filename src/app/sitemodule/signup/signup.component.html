@@ -12,11 +12,18 @@
 			</p>
 			<div class="login-form">
 				<ng-container *ngIf="!inviteToken">
-					<div class="form-group m-form__group row">
+					<div class="form-group m-form__group row" [ngClass]="{'has-danger': subdomain.invalid && subdomain.dirty, 'has-success': subdomain.valid }">
 						<div class="input-group">
 							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
-								[(ngModel)]="model.subdomain" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" required>
+								[(ngModel)]="model.subdomain" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" #subdomain="ngModel" required>
 							<span class="input-group-addon site-name">.kumolus.net</span>
+						</div>
+						<div [hidden]="subdomain.valid || subdomain.pristine"
+						*ngIf="subdomain && subdomain.invalid && (subdomain.dirty || subdomain.touched)"
+						class="form-control-feedback">
+							<div *ngIf="subdomain.errors.required">
+								Please enter the sitename.
+							</div>
 						</div>
 					</div>
 					<div class="form-group m-form__group row" [ngClass]="{'has-danger': unconfirmed_email.invalid && unconfirmed_email.dirty, 'has-success': unconfirmed_email.valid }">
@@ -93,7 +100,7 @@
 					</div>
 				</div>
 				<div class="m-login__form-action">
-					<button class="m-btn-form" type="submit" [disabled]="signupForm.invalid" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
+					<button class="m-btn-form" type="submit" [disabled]="signupForm.invalid || model.password != model.password_confirmation" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
 						(click)="onSubmit(signupForm.form)">
 						Sign Up
 					</button>
