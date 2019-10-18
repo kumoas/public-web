@@ -15,14 +15,14 @@
 					<div class="form-group m-form__group row">
 						<div class="input-group">
 							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
-								[(ngModel)]="model.subdomain" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" required>
+							 [(ngModel)]="model.subdomain" maxlength="255" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" required>
 							<span class="input-group-addon site-name">.kumolus.net</span>
 						</div>
 					</div>
 					<div class="form-group m-form__group row" [ngClass]="{'has-danger': unconfirmed_email.invalid && unconfirmed_email.dirty, 'has-success': unconfirmed_email.valid }">
 						<input class="form-input" type="email" placeholder="Enter email" name="unconfirmed_email" email="true"
 							[pattern]="emailPattern" [(ngModel)]="model.unconfirmed_email"
-							#unconfirmed_email="ngModel" id="unconfirmed_email" required>
+							#unconfirmed_email="ngModel" maxlength="50" id="unconfirmed_email" (ngModelChange)="model.unconfirmed_email = $event.toLowerCase()" required>
 						<div [hidden]="unconfirmed_email.valid || unconfirmed_email.pristine"
 							*ngIf="unconfirmed_email.invalid && (unconfirmed_email.dirty || unconfirmed_email.touched)"
 							class="form-control-feedback">
@@ -37,7 +37,7 @@
 				</ng-container>
 				<div class="form-group m-form__group row" [ngClass]="{'has-danger': username.invalid && username.dirty, 'has-success': username.valid }">
 						<input class="form-input" type="text" placeholder="Enter Username" name="username" [(ngModel)]="model.username"
-							#username="ngModel" minlength="3" maxlength="30" id="username" required>
+							#username="ngModel" minlength="3" maxlength="30"  [pattern]="usernamePattern" id="username" (ngModelChange)="model.username = $event.toLowerCase()" required>
 						<div [hidden]="username.valid || username.pristine"
 							*ngIf="username && username.invalid && (username.dirty || username.touched)"
 							class="form-control-feedback">
@@ -46,6 +46,9 @@
 							</div>
 							<div *ngIf="username.errors.minlength">
 								Username must be at least 3 characters long.
+							</div>
+							<div *ngIf="username.errors.pattern">
+								Username must be alphabetic only.
 							</div>
 						</div>
 				</div>
