@@ -22,7 +22,7 @@
                 <div class="input-group">
                     <input class="form-input" placeholder="Enter Yoursitename" type="text" name="subdomain"
                         [(ngModel)]="model.subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" #subdomain="ngModel"  required>
-                    <span class="input-group-addon" style="height: 32px;font-weight: 500">.kumolus.net</span>
+                    <span class="input-group-addon">.kumolus.net</span>
                 </div>
                 <div [hidden]="subdomain.valid || subdomain.pristine"
  						*ngIf="subdomain && subdomain.invalid && (subdomain.dirty || subdomain.touched)"
