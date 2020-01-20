@@ -18,25 +18,45 @@
                 <p class="">You will receive an email, please confirm your email address by clicking on the link.</p>
             </div>
                                    
-            <div class="form-group m-form__group row">
+            <div class="form-group m-form__group row" [ngClass]="{'has-danger': subdomain.invalid && subdomain.dirty, 'has-success': subdomain.valid }">
                 <div class="input-group">
                     <input class="form-input" placeholder="Enter Yoursitename" type="text" name="subdomain"
-                        [(ngModel)]="model.subdomain"  required>
-                    <span class="input-group-addon" >.kumolus.net</span>
+                        [(ngModel)]="model.subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" #subdomain="ngModel"  required>
+                    <span class="input-group-addon">.kumolus.net</span>
                 </div>
+                <div [hidden]="subdomain.valid || subdomain.pristine"
+ 						*ngIf="subdomain && subdomain.invalid && (subdomain.dirty || subdomain.touched)"
+ 						class="form-control-feedback">
+                        <div *ngIf="subdomain.errors.required">
+                            Please enter the sitename.
+                        </div>
+ 				</div>
             </div>
             <div class="row">
                 <label for="subdomain" class="col-12 col-form-label workspace-label workspace-center">
                     OR
                 </label>
             </div>
-            <div class="form-group m-form__group row">
+            <div class="form-group m-form__group row" [ngClass]="{'has-danger': username_or_email.invalid && username_or_email.dirty, 'has-success': username_or_email.valid }">
                 <input class="form-input" type="text"  placeholder="Enter  Username / Email" name="username_or_email"
-                    [(ngModel)]="model.username_or_email" id="username_or_email" required>
+                    [(ngModel)]="model.username_or_email" [pattern]="appliedPattern" (ngModelChange)="(model.username_or_email = $event.toLowerCase()) && validateUsernameOrEmail($event)" id="username_or_email" #username_or_email="ngModel" required>
+                <div [hidden]="username_or_email.valid || username_or_email.pristine"
+                    *ngIf="username_or_email && username_or_email.invalid && (username_or_email.dirty || username_or_email.touched)"
+                    class="form-control-feedback">
+                    <div *ngIf="isUsernamePattern && username_or_email.errors.required">
+                        Please enter the username or email.
+                    </div>
+                    <div *ngIf="isUsernamePattern && username_or_email.errors.pattern">
+                        Username must be alphabetic only.
+                    </div>
+                    <div *ngIf="!isUsernamePattern && username_or_email.errors.pattern">
+                        Please enter the correct email id.
+                    </div>
+                </div>        
             </div>
             
             <div class="m-login__form-action">
-                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled': !(model.username_or_email || model.subdomain)}" class="m-btn-form" id="m_login_signin_submit"  type="submit" [disabled]="!(model.username_or_email || model.subdomain)"
+                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled':loginForm.invalid }" class="m-btn-form" id="m_login_signin_submit"  type="submit" [disabled]="loginForm.invalid" 
                     (click)="onSubmit(loginForm.form)">
                     Continue
                 </button>
