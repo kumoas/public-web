@@ -14,7 +14,7 @@
 				<ng-container *ngIf="!inviteToken">
 					<div class="form-group m-form__group row" [ngClass]="{'has-danger': subdomain.invalid && subdomain.dirty, 'has-success': subdomain.valid }">
 						<div class="input-group">
-							<input class="form-input" type="text" name="subdomain" placeholder="Enter Yoursitename"
+							<input class="form-input" #subdomain="ngModel" type="text" name="subdomain" placeholder="Enter Yoursitename"
 							 [(ngModel)]="model.subdomain" maxlength="255" id="subdomain" (ngModelChange)="model.subdomain = $event.toLowerCase()" required>
 							<span class="input-group-addon site-name">.kumolus.net</span>
 						</div>
