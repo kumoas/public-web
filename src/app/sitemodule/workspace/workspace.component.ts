@@ -104,6 +104,7 @@ export class WorkspaceComponent implements OnInit {
     }
     closeMsg(){
         this.isSignupSuccessMsg = false;
+        localStorage.removeItem('isSignupSuccess');
     }
 
 }
