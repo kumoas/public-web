@@ -47,7 +47,7 @@
                         Please enter the username or email.
                     </div>
                     <div *ngIf="isUsernamePattern && username_or_email.errors.pattern">
-                        Username must be alphabetic only.
+                        Username must be alphanumeric only.
                     </div>
                     <div *ngIf="!isUsernamePattern && username_or_email.errors.pattern">
                         Please enter the correct email id.

@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
     unconfirmed_email: any;
     inviteToken: any = '';
     signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
-    usernamePattern = /^[a-zA-Z]+$/;
+    usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     errorMessageClosed: boolean = true;
     errorMessage: string = '';
