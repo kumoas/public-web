@@ -104,7 +104,7 @@
 				</div>
 				<div class="m-login__form-action">
 					<button class="m-btn-form" type="submit" [disabled]="signupForm.invalid || model.password != model.password_confirmation" [ngClass] = "{'submit-disabled': signupForm.invalid || model.password != model.password_confirmation }"
-						(click)="onSubmit(signupForm.form)">
+						(click)="onSubmit(signupForm)">
 						Sign Up
 					</button>
 				</div>
