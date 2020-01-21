@@ -54,13 +54,13 @@
                     </div>
                 </div>        
             </div>
-            
             <div class="m-login__form-action">
-                <button [ngClass]="{'m-loader m-loader--right m-loader--light': loading, 'submit-disabled':loginForm.invalid }" class="m-btn-form" id="m_login_signin_submit"  type="submit" [disabled]="loginForm.invalid" 
-                    (click)="onSubmit(loginForm.form)">
-                    Continue
-                </button>
+                    <button  class="m-btn-form" id="m_login_signin_submit" [ngClass]="{'m-loader m-loader--right m-loader--light': loading,'submit-disabled': !(subdomain.valid|| username_or_email.valid) }" type="submit" [disabled]="!(subdomain.valid || username_or_email.valid)" 
+                        (click)="onSubmit()">
+                        Continue 
+                    </button>
             </div>
+          
         </div>
     </form>
     <ng-template #content let-modal let-close="close">
