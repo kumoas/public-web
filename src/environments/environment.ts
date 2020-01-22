@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://kumolus.net/api/"
+  API_URL: "http://api.kumolus.dev:9506/"
 };

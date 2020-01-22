@@ -64,6 +64,7 @@ export class SignupComponent implements OnInit {
                 data => {
                     this.errorMessageClosed = true;
                     this.loading = false;
+                    this._router.navigate(['/workspace']);
                     // if (self.model.invite_token) {
                     //     this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
                     // } 
