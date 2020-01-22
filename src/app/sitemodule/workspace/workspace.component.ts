@@ -60,7 +60,7 @@ export class WorkspaceComponent implements OnInit {
     }
 
 
-    onSubmit(form) {
+    onSubmit() {
         var self = this;
         var params = {
             subdomain : self.model.subdomain,
