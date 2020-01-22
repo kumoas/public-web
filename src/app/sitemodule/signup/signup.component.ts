@@ -30,7 +30,7 @@ export class SignupComponent implements OnInit {
     unconfirmed_email: any;
     inviteToken: any = '';
     signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
-    usernamePattern = /^[a-zA-Z]+$/;
+    usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     errorMessageClosed: boolean = true;
     errorMessage: string = '';
@@ -46,7 +46,6 @@ export class SignupComponent implements OnInit {
 
     ngOnInit() {
         var self = this;
-
         self.inviteToken = self._route.snapshot.queryParams["invite"];
         self.model.invite_token = self.inviteToken;
     }
@@ -54,7 +53,7 @@ export class SignupComponent implements OnInit {
     onSubmit(form) {
         var self = this;
         this.loading = true;
-        if (!form.valid) {
+        if (!form.form.valid) {
             this.showAlert('alertSignup');
             this._alertService.error('Please enter valid signup details.');
             this.loading = false;
@@ -65,11 +64,8 @@ export class SignupComponent implements OnInit {
                 data => {
                     this.errorMessageClosed = true;
                     this.loading = false;
-                    // if (self.model.invite_token) {
-                    //     this.flashMessagesService.show('You can now login with the provided credentials.', { cssClass: 'alert-success', timeout: 2000 })
-                    // } 
                     localStorage.setItem('isSignupSuccess', 'true');
-                    this.model = {};
+                    form.reset();
                 },
                 error => {
                     var errors = JSON.parse(error._body);
