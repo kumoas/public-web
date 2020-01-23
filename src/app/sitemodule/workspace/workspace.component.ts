@@ -38,8 +38,7 @@ export class WorkspaceComponent implements OnInit {
 
     ngOnInit() {
         let self = this;
-        let successSignup = this._route.snapshot.queryParams["isSignupSuccess"];
-        if(successSignup == 'true'){
+        if(localStorage.getItem('isSignupSuccess') == 'true'){
           this.isSignupSuccessMsg = true;
         } else{
           this.isSignupSuccessMsg = false;

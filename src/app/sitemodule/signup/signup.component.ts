@@ -64,8 +64,9 @@ export class SignupComponent implements OnInit {
                 data => {
                     this.errorMessageClosed = true;
                     this.loading = false;
-                    localStorage.setItem('isSignupSuccess', 'true');
                     form.reset();
+                    localStorage.setItem('isSignupSuccess', 'true');
+                    this._router.navigate(['/workspace']);
                 },
                 error => {
                     var errors = JSON.parse(error._body);
