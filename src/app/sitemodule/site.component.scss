@@ -232,3 +232,23 @@
   text-align: center;
   height: 0px;
 }
+@media only screen and (max-width: 5800px) {
+  .m-login__logo img {
+      max-width: 8%;
+  }
+}
+@media only screen and (max-width: 3800px) {
+  .m-login__logo img {
+      max-width: 13%;
+  }
+}
+@media only screen and (max-width: 2600px) {
+  .m-login__logo img {
+      max-width: 22%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  .m-login__logo img {
+      max-width: 40%;
+  }
+}
