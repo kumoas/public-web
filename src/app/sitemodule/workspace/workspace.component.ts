@@ -20,6 +20,10 @@ export class WorkspaceComponent implements OnInit {
     isSignupSuccessMsg: boolean = false;
     errorMessageClosed: boolean = true;
     errorMessage: string = '';
+    isUsernamePattern :boolean = true;
+    usernamePattern = /^[a-zA-Z0-9]+$/;
+    emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    appliedPattern : any = this.usernamePattern;
 
     @ViewChild('alertSignin', { read: ViewContainerRef }) alertSignin: ViewContainerRef;
     @ViewChild('content') content: ElementRef;
@@ -33,15 +37,29 @@ export class WorkspaceComponent implements OnInit {
     }
 
     ngOnInit() {
-        let successSignup = this._route.snapshot.queryParams["isSignupSuccess"];
-        if(successSignup == 'true'){
+        let self = this;
+        if(localStorage.getItem('isSignupSuccess') == 'true'){
           this.isSignupSuccessMsg = true;
         } else{
           this.isSignupSuccessMsg = false;
         } 
+        
     }
     
-    onSubmit(form) {
+    validateUsernameOrEmail($event){
+        let self = this;
+        if($event.includes('@')){
+            self.appliedPattern = self.emailPattern;
+            self.isUsernamePattern = false;
+        }else{
+            self.appliedPattern = self.usernamePattern;
+            self.isUsernamePattern = true;
+        }
+        
+    }
+
+
+    onSubmit() {
         var self = this;
         var params = {
             subdomain : self.model.subdomain,
@@ -85,6 +103,7 @@ export class WorkspaceComponent implements OnInit {
     }
     closeMsg(){
         this.isSignupSuccessMsg = false;
+        localStorage.removeItem('isSignupSuccess');
     }
 
 }
