@@ -27,7 +27,7 @@
     "core-js": "^2.4.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "moment": "^2.22.0",
     "moment-timezone": "^0.5.14",
     "underscore": "^1.8.3",
