@@ -16,8 +16,8 @@
 							<select class="form-input" id="region" name="region" [(ngModel)]="organisation_attributes.hosted_zone" required
 							#region="ngModel" (ngModelChange)="getZoneNames()" [disabled]="event_id ? true : false">
 								<option value="" class="option-label">Select region</option>
-								<option *ngFor="let region of regions" [value]="region">
-									{{region}}
+								<option *ngFor="let region of regions" [value]="region.code">
+									{{region.name}}
 								</option>
 							</select>
 							<div [hidden]="region.valid || region.pristine" *ngIf="region.invalid && (region.dirty || region.touched)"
