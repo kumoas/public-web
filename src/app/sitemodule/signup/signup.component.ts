@@ -17,6 +17,7 @@ export class SignupComponent implements OnInit {
     model: any = {
         "name": '',
         "username": '',
+        'region':'',
         "unconfirmed_email": '',
         "invite_token": '',
         "organisation_attributes": { "name": '' },
@@ -29,6 +30,7 @@ export class SignupComponent implements OnInit {
     // TODO: Need to remove unconfirmed_email. need to solve error on build
     unconfirmed_email: any;
     inviteToken: any = '';
+    regions = ['US West (Oregon) us-west-2','Europe (Frankfurt) eu-central-1']
     signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
     usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
