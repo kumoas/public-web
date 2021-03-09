@@ -14,7 +14,7 @@ import { Observable } from "rxjs";
 })
 
 export class WorkspaceComponent implements OnInit {
-    model: any = {};
+    model: any = {region:''};
     loading = false;
     returnUrls: any = [];
     isSignupSuccessMsg: boolean = false;
@@ -24,7 +24,7 @@ export class WorkspaceComponent implements OnInit {
     usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     appliedPattern : any = this.usernamePattern;
-
+    regions = ['US West (Oregon) us-west-2','Europe (Frankfurt) eu-central-1']
     @ViewChild('alertSignin', { read: ViewContainerRef }) alertSignin: ViewContainerRef;
     @ViewChild('content') content: ElementRef;
     constructor(private _router: Router,

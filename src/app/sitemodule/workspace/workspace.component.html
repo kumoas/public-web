@@ -17,7 +17,21 @@
                 <div class="x"><i class="fa fa-times signup_success_close" (click)="closeMsg()"></i></div>
                 <p class="">You will receive an email, please confirm your email address by clicking on the link.</p>
             </div>
-                                   
+            <div class="form-group m-form__group row" [ngClass]="{'has-danger': region.invalid && region.dirty, 'has-success': region.valid }">
+                <select class="form-input" id="region" name="region" [(ngModel)]="model.region" required
+                #region="ngModel" (ngModelChange)="getZoneNames()" [disabled]="event_id ? true : false">
+                    <option value="" class="option-label">Select region</option>
+                    <option *ngFor="let region of regions" [value]="region">
+                        {{region}}
+                    </option>
+                </select>
+                <div [hidden]="region.valid || region.pristine" *ngIf="region.invalid && (region.dirty || region.touched)"
+                    class="form-control-feedback">
+                    <div *ngIf="region.errors.required">
+                        Region is required.
+                    </div>
+                </div>
+        </div>                  
             <div class="form-group m-form__group row" [ngClass]="{'has-danger': subdomain.invalid && subdomain.dirty, 'has-success': subdomain.valid }">
                 <div class="input-group">
                     <input class="form-input" placeholder="Enter Yoursitename" type="text" name="subdomain"
