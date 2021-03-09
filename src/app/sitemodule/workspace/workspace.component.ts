@@ -64,7 +64,8 @@ export class WorkspaceComponent implements OnInit {
         var self = this;
         var params = {
             subdomain : self.model.subdomain,
-            username_or_email: self.model.username_or_email
+            username_or_email: self.model.username_or_email,
+            hosted_zone :self.model.region
         }
         self._authService.validateSubdomain(params).then(response => {
             if (response.status) {

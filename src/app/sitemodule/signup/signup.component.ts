@@ -17,10 +17,9 @@ export class SignupComponent implements OnInit {
     model: any = {
         "name": '',
         "username": '',
-        'region':'',
         "unconfirmed_email": '',
         "invite_token": '',
-        "organisation_attributes": { "name": '' },
+        "organisation_attributes": { "name": '','hosted_zone' :''},
         "password": '',
         "password_confirmation": '',
         "signup_as": "normal",
