@@ -61,6 +61,8 @@ export class SignupComponent implements OnInit {
             this.loading = false;
         }
         self.model.host_ = window.location.origin;
+        let hosted_zone =  this.model.organisation_attributes && this.model.organisation_attributes.hoseted_zone ? this.model.organisation_attributes.hoseted_zone : ""
+        self._authService.setHostedZone(hosted_zone);
         this._authService.signup(this.model)
             .subscribe(
                 data => {

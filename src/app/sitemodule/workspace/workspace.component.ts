@@ -67,6 +67,8 @@ export class WorkspaceComponent implements OnInit {
             username_or_email: self.model.username_or_email,
             hosted_zone :self.model.region
         }
+        let hosted_zone =  self.model.region ? self.model.region : "";
+        self._authService.setHostedZone(hosted_zone);
         self._authService.validateSubdomain(params).then(response => {
             if (response.status) {
                 this.errorMessageClosed = true;
