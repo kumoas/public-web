@@ -14,7 +14,7 @@ import { Observable } from "rxjs";
 })
 
 export class WorkspaceComponent implements OnInit {
-    model: any = {};
+    model: any = {region:''};
     loading = false;
     returnUrls: any = [];
     isSignupSuccessMsg: boolean = false;
@@ -24,7 +24,7 @@ export class WorkspaceComponent implements OnInit {
     usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     appliedPattern : any = this.usernamePattern;
-
+    regions = [{name:'US West (Oregon) us-west-2',code:'us-west-2'},{name:'Europe (Frankfurt) eu-central-1',code:'eu-central-1'}]
     @ViewChild('alertSignin', { read: ViewContainerRef }) alertSignin: ViewContainerRef;
     @ViewChild('content') content: ElementRef;
     constructor(private _router: Router,
@@ -63,8 +63,11 @@ export class WorkspaceComponent implements OnInit {
         var self = this;
         var params = {
             subdomain : self.model.subdomain,
-            username_or_email: self.model.username_or_email
+            username_or_email: self.model.username_or_email,
+            hosted_zone :self.model.region
         }
+        let hosted_zone =  self.model.region ? self.model.region : "";
+        self._authService.setHostedZone(hosted_zone);
         self._authService.validateSubdomain(params).then(response => {
             if (response.status) {
                 this.errorMessageClosed = true;

@@ -6,10 +6,18 @@ import { User } from "../_models/index";
 
 @Injectable()
 export class AuthenticationService {
+    hosted_zone: any;
 
     constructor(private http: Http) {
     }
-
+    
+    setHostedZone(region){
+        this.hosted_zone = region;
+        localStorage.setItem('hosted_region',this.hosted_zone)
+    }
+    getHostedZone(){
+        return this.hosted_zone;
+    }
     validateSubdomain(params){
         if(params.subdomain && params.username_or_email){
             var url = 'private/users/validate_subdomain?subdomain='+params.subdomain+'&username_or_email='+params.username_or_email;

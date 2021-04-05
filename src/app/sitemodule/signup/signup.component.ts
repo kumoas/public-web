@@ -19,7 +19,7 @@ export class SignupComponent implements OnInit {
         "username": '',
         "unconfirmed_email": '',
         "invite_token": '',
-        "organisation_attributes": { "name": '' },
+        "organisation_attributes": { "name": '','hosted_zone' :''},
         "password": '',
         "password_confirmation": '',
         "signup_as": "normal",
@@ -29,6 +29,10 @@ export class SignupComponent implements OnInit {
     // TODO: Need to remove unconfirmed_email. need to solve error on build
     unconfirmed_email: any;
     inviteToken: any = '';
+    regions = [{name:'US West (Oregon) us-west-2',code:'us-west-2'},
+    {name:'Europe (Frankfurt) eu-central-1',code:'eu-central-1'},
+    {name:'Asia Pacific (Sydney) ap-southeast-2',code:'ap-southeast-2'}]
+
     signupasOptions = [{ name: 'SaaS', value: 'normal' }, { name: 'Explorer', value: 'viewer' }];
     usernamePattern = /^[a-zA-Z0-9]+$/;
     emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -59,6 +63,8 @@ export class SignupComponent implements OnInit {
             this.loading = false;
         }
         self.model.host_ = window.location.origin;
+        let hosted_zone =  this.model.organisation_attributes && this.model.organisation_attributes.hoseted_zone ? this.model.organisation_attributes.hoseted_zone : ""
+        self._authService.setHostedZone(hosted_zone);
         this._authService.signup(this.model)
             .subscribe(
                 data => {

@@ -12,6 +12,22 @@
 			</p>
 			<div class="login-form">
 				<ng-container *ngIf="!inviteToken">
+					<div class="form-group m-form__group row" [ngClass]="{'has-danger': region.invalid && region.dirty, 'has-success': region.valid }">
+							<select class="form-input" id="region" name="region" [(ngModel)]="organisation_attributes.hosted_zone" required
+							#region="ngModel" (ngModelChange)="getZoneNames()" [disabled]="event_id ? true : false">
+								<option value="" class="option-label">Select region</option>
+								<option *ngFor="let region of regions" [value]="region.code">
+									{{region.name}}
+								</option>
+							</select>
+							<div [hidden]="region.valid || region.pristine" *ngIf="region.invalid && (region.dirty || region.touched)"
+								class="form-control-feedback">
+								<div *ngIf="region.errors.required">
+									Region is required.
+								</div>
+							</div>
+					</div>
+				
 					<div class="form-group m-form__group row" [ngClass]="{'has-danger': subdomain.invalid && subdomain.dirty, 'has-success': subdomain.valid }">
 						<div class="input-group">
 							<input class="form-input" #subdomain="ngModel" type="text" name="subdomain" placeholder="Enter Yoursitename"
