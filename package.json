@@ -28,7 +28,7 @@
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14",
     "jquery": "^3.2.1",
-    "moment": "^2.22.0",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.14",
     "underscore": "^1.8.3",
     "angular2-storage-sync": "^0.1.0",
